@@ -1,0 +1,4 @@
+course_project/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
