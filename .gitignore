@@ -2,3 +2,18 @@ course_project/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Generated artifacts and predictions
+artifacts/
+outputs/
+*.npz
+
+# Data and model weights
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# macOS resource fork sidecars
+._*
