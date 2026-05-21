@@ -1,0 +1,13 @@
+# large model/checkpoint files
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# training outputs
+outputs/
+
+# cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
