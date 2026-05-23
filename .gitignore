@@ -17,3 +17,7 @@ outputs/
 
 # macOS resource fork sidecars
 ._*
+
+# Local dataset archive
+BCI_Speech.zip
+
