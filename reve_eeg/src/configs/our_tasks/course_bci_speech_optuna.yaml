@@ -1,0 +1,63 @@
+name: BCI_Speech
+n_chans: 64
+duration: 3
+
+classifier:
+  n_classes: 5
+  pooling: "last"
+  head_type: ${oc.select:head_type,linear}
+  mlp_hidden_dim: optuna:categorical:512:256:512:768
+  dropout: optuna:float:0.10:0.05:0.35
+
+data_loader:
+  dataset:
+    _target_: downstream_tasks.dataloader_course_h5.CourseH5Dataset
+    path: ${data_root}/BCI_Speech
+    dataset_name: BCI_Speech
+    ckpt_root: ${ckpt_root}
+    normalize: true
+    cache_in_memory: false
+    resample_to_200hz: false
+  batch_size: ${oc.select:batch_size,8}
+  seed: ${oc.select:seed,42}
+  splits: ["train", "val"]
+
+linear_probing:
+  n_epochs: 30
+  patience: 8
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,8}
+  optimizer:
+    lr: optuna:float:0.0008:0.0002:0.002:log
+    weight_decay: optuna:float:0.0001:1.0e-06:0.01:log
+  scheduler:
+    patience: 4
+
+mlp_probing:
+  n_epochs: 30
+  patience: 8
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,8}
+  optimizer:
+    lr: optuna:float:0.0006:0.0002:0.0015:log
+    weight_decay: optuna:float:0.0001:1.0e-06:0.01:log
+  scheduler:
+    patience: 4
+
+fine_tuning:
+  n_epochs: 18
+  patience: 5
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,8}
+  encoder_lr: optuna:float:5.0e-06:1.0e-06:1.0e-05:log
+  head_lr: optuna:float:5.0e-05:2.0e-05:2.0e-04:log
+  optimizer:
+    lr: 1.0e-04
+    weight_decay: optuna:float:0.0001:1.0e-06:0.01:log
+  scheduler:
+    patience: 3
+
+clip: 100

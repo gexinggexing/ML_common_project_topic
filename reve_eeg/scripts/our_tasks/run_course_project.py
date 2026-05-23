@@ -18,6 +18,7 @@ PREDICT_SCRIPT_PATH = PROJECT_ROOT / "scripts" / "our_tasks" / "predict_test.py"
 DEFAULT_WINDOWS_PYTHON = Path(r"D:\app\conda_envs\brain-dl\python.exe")
 COURSE_CONFIGS = {
     "BCIC2A": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_bcic2a.yaml",
+    "BCI_Speech": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_bci_speech.yaml",
     "CHINESE": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_chinese.yaml",
     "MDD": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_mdd.yaml",
     "SEED": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_seed.yaml",
@@ -26,6 +27,7 @@ COURSE_CONFIGS = {
 SUPPORTED_MODES = {"lp", "mlp", "ft", "lp+ft"}
 DATASET_SMOKE_BATCH_SIZES = {
     "BCIC2A": 16,
+    "BCI_Speech": 8,
     "CHINESE": 16,
     "MDD": 16,
     "SEED": 8,

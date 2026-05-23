@@ -17,7 +17,7 @@ import yaml
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RESOURCE_CONFIG_PATH = PROJECT_ROOT / "src" / "configs" / "our_tasks" / "resource_paths.yaml"
 DEFAULT_OUT_DIR = PROJECT_ROOT / "data" / "course_project"
-DEFAULT_DATASETS = ["BCIC2A", "CHINESE", "MDD", "SEED", "SLEEP"]
+DEFAULT_DATASETS = ["BCIC2A", "CHINESE", "MDD", "SEED", "SLEEP", "BCI_Speech"]
 SPLIT_FILES = {
     "train": "train.h5",
     "val": "val.h5",
@@ -83,7 +83,7 @@ def parse_args() -> argparse.Namespace:
         "--datasets",
         nargs="+",
         default=DEFAULT_DATASETS,
-        help="Datasets to scan. Defaults to BCIC2A CHINESE MDD SEED SLEEP.",
+        help="Datasets to scan. Defaults to BCIC2A CHINESE MDD SEED SLEEP BCI_Speech.",
     )
     return parser.parse_args()
 
@@ -435,6 +435,10 @@ def detect_notes(
 
     if dataset_name == "BCIC2A":
         notes.append("BCIC2A shape [N, 22, 800] corresponds to a 4-second window at 200Hz.")
+
+    if dataset_name == "BCI_Speech":
+        notes.append("BCI_Speech shape [N, 64, 600] corresponds to a 3-second window at 200Hz.")
+        notes.append("No dataset_info.json was found beside the H5 files; channel metadata must be supplied manually.")
 
     return notes
 

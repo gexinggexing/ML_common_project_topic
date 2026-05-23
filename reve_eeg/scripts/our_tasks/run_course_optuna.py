@@ -18,6 +18,7 @@ DEFAULT_WINDOWS_PYTHON = Path(r"D:\app\conda_envs\brain-dl\python.exe")
 DEFAULT_OUT_ROOT = PROJECT_ROOT / "outputs" / "course_project_optuna"
 COURSE_OPTUNA_CONFIGS = {
     "BCIC2A": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_bcic2a_optuna.yaml",
+    "BCI_Speech": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_bci_speech_optuna.yaml",
     "CHINESE": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_chinese_optuna.yaml",
     "MDD": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_mdd_optuna.yaml",
     "SEED": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_seed_optuna.yaml",
@@ -26,6 +27,7 @@ COURSE_OPTUNA_CONFIGS = {
 SUPPORTED_MODES = {"lp", "mlp", "ft"}
 DEFAULT_BATCH_SIZES = {
     "BCIC2A": 16,
+    "BCI_Speech": 8,
     "CHINESE": 16,
     "MDD": 16,
     "SEED": 8,
@@ -33,6 +35,7 @@ DEFAULT_BATCH_SIZES = {
 }
 DEFAULT_TRIALS = {
     "BCIC2A": {"lp": 16, "mlp": 16, "ft": 12},
+    "BCI_Speech": {"lp": 14, "mlp": 14, "ft": 10},
     "CHINESE": {"lp": 12, "mlp": 12, "ft": 10},
     "MDD": {"lp": 14, "mlp": 14, "ft": 10},
     "SEED": {"lp": 16, "mlp": 14, "ft": 10},
