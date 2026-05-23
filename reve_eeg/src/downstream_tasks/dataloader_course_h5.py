@@ -35,10 +35,80 @@ CHANNEL_ALIASES = {
 }
 COURSE_DATASET_SPECS = {
     "BCIC2A": {"n_chans": 22, "duration_sec": 4.0, "n_classes": 4},
+    "BCI_Speech": {"n_chans": 64, "duration_sec": 3.0, "n_classes": 5},
     "CHINESE": {"n_chans": 22, "duration_sec": 1.0, "n_classes": 2},
     "MDD": {"n_chans": 20, "duration_sec": 1.0, "n_classes": 2},
     "SEED": {"n_chans": 62, "duration_sec": 2.0, "n_classes": 3},
     "SLEEP": {"n_chans": 6, "duration_sec": 30.0, "n_classes": 5},
+}
+BCI_SPEECH_64_CHANNELS = [
+    "Fp1",
+    "Fpz",
+    "Fp2",
+    "AF7",
+    "AF3",
+    "AF4",
+    "AF8",
+    "F7",
+    "F5",
+    "F3",
+    "F1",
+    "Fz",
+    "F2",
+    "F4",
+    "F6",
+    "F8",
+    "FT7",
+    "FC5",
+    "FC3",
+    "FC1",
+    "FCz",
+    "FC2",
+    "FC4",
+    "FC6",
+    "FT8",
+    "T7",
+    "C5",
+    "C3",
+    "C1",
+    "Cz",
+    "C2",
+    "C4",
+    "C6",
+    "T8",
+    "TP7",
+    "CP5",
+    "CP3",
+    "CP1",
+    "CPz",
+    "CP2",
+    "CP4",
+    "CP6",
+    "TP8",
+    "P7",
+    "P5",
+    "P3",
+    "P1",
+    "Pz",
+    "P2",
+    "P4",
+    "P6",
+    "P8",
+    "PO7",
+    "PO5",
+    "PO3",
+    "POz",
+    "PO4",
+    "PO6",
+    "PO8",
+    "O1",
+    "Oz",
+    "O2",
+    "CB1",
+    "CB2",
+]
+COURSE_DATASET_ELECTRODES = {
+    "BCI_Speech": BCI_SPEECH_64_CHANNELS,
 }
 
 
@@ -311,6 +381,8 @@ class CourseH5Dataset(Dataset):
         self.dataset_info_path = _find_existing_path([self.dataset_dir / name for name in INFO_FILE_CANDIDATES])
         self.dataset_info = self._load_dataset_info()
         self.channel_names = electrodes or self._load_channel_names()
+        if not self.channel_names:
+            self.channel_names = list(COURSE_DATASET_ELECTRODES.get(self.dataset_name, []))
         self.dataset_spec = COURSE_DATASET_SPECS.get(self.dataset_name, {})
         self.expected_n_channels = int(self.dataset_spec["n_chans"]) if "n_chans" in self.dataset_spec else None
         self.expected_n_classes = int(self.dataset_spec["n_classes"]) if "n_classes" in self.dataset_spec else None
