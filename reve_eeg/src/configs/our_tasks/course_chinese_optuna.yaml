@@ -1,0 +1,63 @@
+name: CHINESE
+n_chans: 22
+duration: 1
+
+classifier:
+  n_classes: 2
+  pooling: "last"
+  head_type: ${oc.select:head_type,linear}
+  mlp_hidden_dim: optuna:categorical:512:256:512
+  dropout: optuna:float:0.25:0.10:0.45
+
+data_loader:
+  dataset:
+    _target_: downstream_tasks.dataloader_course_h5.CourseH5Dataset
+    path: ${data_root}/CHINESE
+    dataset_name: CHINESE
+    ckpt_root: ${ckpt_root}
+    normalize: true
+    cache_in_memory: false
+    resample_to_200hz: false
+  batch_size: ${oc.select:batch_size,16}
+  seed: ${oc.select:seed,42}
+  splits: ["train", "val"]
+
+linear_probing:
+  n_epochs: 25
+  patience: 6
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,16}
+  optimizer:
+    lr: optuna:float:0.0004:0.0001:0.0012:log
+    weight_decay: optuna:float:0.001:1.0e-05:0.05:log
+  scheduler:
+    patience: 3
+
+mlp_probing:
+  n_epochs: 25
+  patience: 6
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,16}
+  optimizer:
+    lr: optuna:float:0.0003:0.0001:0.001:log
+    weight_decay: optuna:float:0.001:1.0e-05:0.05:log
+  scheduler:
+    patience: 3
+
+fine_tuning:
+  n_epochs: 15
+  patience: 4
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,16}
+  encoder_lr: optuna:float:5.0e-06:1.0e-06:1.0e-05:log
+  head_lr: optuna:float:5.0e-05:2.0e-05:2.0e-04:log
+  optimizer:
+    lr: 1.0e-04
+    weight_decay: optuna:float:0.001:1.0e-05:0.05:log
+  scheduler:
+    patience: 2
+
+clip: 100

@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local prompts
+prompt_*.md
+
+# Large local artifacts
+checkpoints/
+*.pth
+*.pt

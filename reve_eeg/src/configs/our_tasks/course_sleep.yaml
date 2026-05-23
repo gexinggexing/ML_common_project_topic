@@ -1,0 +1,63 @@
+name: SLEEP
+n_chans: 6
+duration: 30
+
+classifier:
+  n_classes: 5
+  pooling: "last"
+  head_type: ${oc.select:head_type,linear}
+  mlp_hidden_dim: ${oc.select:mlp_hidden_dim,512}
+  dropout: ${oc.select:classifier_dropout,0.1}
+
+data_loader:
+  dataset:
+    _target_: downstream_tasks.dataloader_course_h5.CourseH5Dataset
+    path: ${data_root}/SLEEP
+    dataset_name: SLEEP
+    ckpt_root: ${ckpt_root}
+    normalize: true
+    cache_in_memory: false
+    resample_to_200hz: false
+  batch_size: ${oc.select:batch_size,2}
+  seed: ${oc.select:seed,42}
+  splits: ["train", "val"]
+
+linear_probing:
+  n_epochs: ${oc.select:n_epochs,2}
+  patience: ${oc.select:patience,2}
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,2}
+  optimizer:
+    lr: ${oc.select:lr,0.001}
+    weight_decay: ${oc.select:weight_decay,0.0001}
+  scheduler:
+    patience: 2
+
+mlp_probing:
+  n_epochs: ${oc.select:n_epochs,2}
+  patience: ${oc.select:patience,2}
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,2}
+  optimizer:
+    lr: ${oc.select:lr,0.001}
+    weight_decay: ${oc.select:weight_decay,0.0001}
+  scheduler:
+    patience: 2
+
+fine_tuning:
+  n_epochs: ${oc.select:n_epochs,2}
+  patience: ${oc.select:patience,2}
+  warmup_epochs: 0
+  mixup: false
+  batch_size: ${oc.select:batch_size,2}
+  encoder_lr: ${oc.select:encoder_lr,1.0e-5}
+  head_lr: ${oc.select:head_lr,1.0e-4}
+  optimizer:
+    lr: ${oc.select:lr,1.0e-4}
+    weight_decay: ${oc.select:weight_decay,0.0001}
+  scheduler:
+    patience: 2
+
+clip: 100

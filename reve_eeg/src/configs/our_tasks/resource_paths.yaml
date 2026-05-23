@@ -1,0 +1,35 @@
+"5080":
+  system: windows
+  data_root: "X:\\panxy\\course\\project1_data\\course project\\course project"
+  repo_root: "\\\\10.16.93.90\\dataset3\\nzh\\eeg_FM\\reve_eeg"
+  ckpt_root: "\\\\10.16.93.90\\dataset3\\nzh\\eeg_FM\\reve_eeg\\checkpoints"
+  out_root: "outputs/course_project"
+  default_batch_size: 16
+  num_workers: 0
+
+l40:
+  system: linux
+  data_root: "/mnt/dataset3/panxy/course/project1_data/course project/course project"
+  repo_root: "/mnt/dataset3/nzh/eeg_FM/reve_eeg"
+  ckpt_root: "/mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints"
+  out_root: "outputs/course_project"
+  default_batch_size: 32
+  num_workers: 4
+
+"4090":
+  system: linux
+  data_root: "/mnt/dataset3/panxy/course/project1_data/course project/course project"
+  repo_root: "/mnt/dataset3/nzh/eeg_FM/reve_eeg"
+  ckpt_root: "/mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints"
+  out_root: "outputs/course_project"
+  default_batch_size: 16
+  num_workers: 4
+
+hs:
+  system: linux
+  data_root: "/vePFS-0x0d/nzh/data/eeg/ML_project"
+  repo_root: "/vePFS-0x0d/nzh/eeg_FM/reve_eeg"
+  ckpt_root: "/vePFS-0x0d/nzh/eeg_FM/reve_eeg/checkpoints"
+  out_root: "outputs/course_project"
+  default_batch_size: 32
+  num_workers: 4
