@@ -1,0 +1,18 @@
+{
+  "study_name": "MDD_mlp_seed42",
+  "dataset": "MDD",
+  "training_mode": "mlp",
+  "seed": 42,
+  "best_trial_number": 8,
+  "best_value": 0.9109375,
+  "best_params": {
+    "task.classifier.mlp_hidden_dim": 256,
+    "task.classifier.dropout": 0.09364515842048565,
+    "task.mlp_probing.optimizer.lr": 0.0014785822940821028,
+    "task.mlp_probing.optimizer.weight_decay": 0.004840213402251284
+  },
+  "best_trial_dir": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/MDD/mlp/seed42/trial_8",
+  "best_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/MDD/mlp/seed42/trial_8/model_best.pth",
+  "metrics_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/MDD/mlp/seed42/trial_8/metrics.csv",
+  "trials_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/MDD/mlp/seed42/optuna_trials.csv"
+}

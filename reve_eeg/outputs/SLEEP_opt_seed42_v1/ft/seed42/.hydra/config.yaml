@@ -1,0 +1,78 @@
+mode: train
+pretrained_path: checkpoints/reve-base
+cache_dir: .cache
+model_type: reve
+seed: 42
+n_runs: 6
+training_mode: ft
+trainer:
+  device: cuda
+  clip_grad: 2.0
+  torch_dtype: fp16
+loader:
+  num_workers: 4
+  pin_memory: true
+  persistent_workers: true
+  prefetch_factor: 2
+output_dir: outputs/course_project_optuna_seed42_v1/SLEEP/ft/seed42
+lora:
+  enabled: true
+  rank: 16
+  apply_to:
+  - attention
+encoder:
+  transformer:
+    embed_dim: 512
+    depth: 22
+    heads: 8
+    head_dim: 64
+    mlp_dim_ratio: 2.66
+    use_geglu: true
+  freqs: 4
+  noise_ratio: 0.0025
+  patch_size: 200
+  patch_overlap: 20
+task:
+  linear_probing:
+    optimizer:
+      _target_: utils.stable_adamw.StableAdamW
+      lr: ${trainer.lr}
+      weight_decay: 0.01
+      betas:
+      - 0.92
+      - 0.999
+      eps: 1.0e-09
+    scheduler:
+      _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+      mode: max
+      factor: 0.5
+      patience: 5
+  fine_tuning:
+    optimizer:
+      _target_: utils.stable_adamw.StableAdamW
+      lr: ${trainer.lr}
+      weight_decay: 0.01
+      betas:
+      - 0.92
+      - 0.999
+      eps: 1.0e-09
+    scheduler:
+      _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+      mode: max
+      factor: 0.5
+      patience: 5
+  name: SLEEP
+init:
+  init_method: full_megatron
+  init_std: 0.02
+  init_cutoff_factor: 3.0
+  hidden_size: 512
+  num_hidden_layers: 1
+  init_cls: false
+task_config_path: src/configs/our_tasks/course_sleep_optuna.yaml
+data_root: /mnt/dataset3/panxy/course/project1_data/course project/course project
+ckpt_root: checkpoints
+batch_size: 2
+skip_test_eval: true
+compact_console_logging: true
+head_type: linear

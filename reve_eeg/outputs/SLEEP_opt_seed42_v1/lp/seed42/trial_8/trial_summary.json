@@ -1,0 +1,11 @@
+{
+  "trial_number": 8,
+  "dataset": "SLEEP",
+  "training_mode": "lp",
+  "seed": 42,
+  "best_val_balanced_accuracy": 0.5195405106036594,
+  "trial_dir": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/lp/seed42/trial_8",
+  "metrics_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/lp/seed42/trial_8/metrics.csv",
+  "best_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/lp/seed42/trial_8/model_best.pth",
+  "final_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/lp/seed42/trial_8/model_final.pth"
+}

@@ -1,0 +1,18 @@
+{
+  "study_name": "SEED_ft_seed42",
+  "dataset": "SEED",
+  "training_mode": "ft",
+  "seed": 42,
+  "best_trial_number": 2,
+  "best_value": 0.43555555555555553,
+  "best_params": {
+    "task.classifier.dropout": 0.2074662667109422,
+    "task.fine_tuning.optimizer.weight_decay": 0.0011674975458081493,
+    "task.fine_tuning.encoder_lr": 1.7296256273525447e-06,
+    "task.fine_tuning.head_lr": 5.1634273195154156e-05
+  },
+  "best_trial_dir": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/ft/seed42/trial_2",
+  "best_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/ft/seed42/trial_2/model_best.pth",
+  "metrics_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/ft/seed42/trial_2/metrics.csv",
+  "trials_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/ft/seed42/optuna_trials.csv"
+}

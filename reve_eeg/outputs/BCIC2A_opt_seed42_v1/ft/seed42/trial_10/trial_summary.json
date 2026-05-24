@@ -1,0 +1,11 @@
+{
+  "trial_number": 10,
+  "dataset": "BCIC2A",
+  "training_mode": "ft",
+  "seed": 42,
+  "best_val_balanced_accuracy": 0.35555555555555557,
+  "trial_dir": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/trial_10",
+  "metrics_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/trial_10/metrics.csv",
+  "best_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/trial_10/model_best.pth",
+  "final_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/trial_10/model_final.pth"
+}

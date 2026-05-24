@@ -1,0 +1,53 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/src/dt.py:66: IdrTorchWarning: Calling idr_torch only makes sense within a distributed execution but none was detected. You may have forgotten to use a launcher (such as srun). Back to default (non distributed) values
+  if idr_torch.is_master or kwargs.pop("force", False):
+Loaded external task config: /mnt/dataset3/nzh/eeg_FM/reve_eeg/src/configs/our_tasks/course_bcic2a.yaml
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   1%|▏         | 2/140 [00:00<00:50,  2.76it/s]
+Loading weights:   2%|▏         | 3/140 [00:02<02:03,  1.11it/s]
+Loading weights:   5%|▌         | 7/140 [00:03<00:52,  2.54it/s]
+Loading weights:   6%|▌         | 8/140 [00:04<01:07,  1.96it/s]
+Loading weights:  21%|██▏       | 30/140 [00:05<00:15,  6.92it/s]
+Loading weights:  22%|██▏       | 31/140 [00:06<00:20,  5.33it/s]
+Loading weights:  24%|██▍       | 34/140 [00:07<00:23,  4.61it/s]
+Loading weights:  25%|██▌       | 35/140 [00:10<00:39,  2.68it/s]
+Loading weights:  26%|██▌       | 36/140 [00:11<00:45,  2.31it/s]
+Loading weights:  34%|███▍      | 48/140 [00:13<00:24,  3.70it/s]
+Loading weights:  41%|████      | 57/140 [00:14<00:17,  4.68it/s]
+Loading weights:  44%|████▎     | 61/140 [00:15<00:18,  4.34it/s]
+Loading weights:  46%|████▋     | 65/140 [00:16<00:17,  4.28it/s]
+Loading weights:  47%|████▋     | 66/140 [00:17<00:21,  3.36it/s]
+Loading weights:  48%|████▊     | 67/140 [00:18<00:23,  3.17it/s]
+Loading weights:  49%|████▊     | 68/140 [00:18<00:25,  2.85it/s]
+Loading weights:  54%|█████▎    | 75/140 [00:19<00:12,  5.09it/s]
+Loading weights:  57%|█████▋    | 80/140 [00:20<00:12,  4.90it/s]
+Loading weights:  66%|██████▌   | 92/140 [00:20<00:05,  8.39it/s]
+Loading weights:  66%|██████▋   | 93/140 [00:21<00:06,  7.05it/s]
+Loading weights:  69%|██████▉   | 97/140 [00:21<00:06,  6.94it/s]
+Loading weights:  72%|███████▏  | 101/140 [00:22<00:05,  7.24it/s]
+Loading weights:  73%|███████▎  | 102/140 [00:23<00:06,  5.59it/s]
+Loading weights:  74%|███████▎  | 103/140 [00:24<00:10,  3.56it/s]
+Loading weights:  76%|███████▋  | 107/140 [00:24<00:07,  4.57it/s]
+Loading weights:  77%|███████▋  | 108/140 [00:25<00:08,  3.76it/s]
+Loading weights:  85%|████████▌ | 119/140 [00:25<00:02,  8.32it/s]
+Loading weights:  86%|████████▌ | 120/140 [00:26<00:04,  4.87it/s]
+Loading weights:  94%|█████████▎| 131/140 [00:27<00:01,  8.61it/s]
+Loading weights: 100%|██████████| 140/140 [00:27<00:00,  5.10it/s]
+Detected input shape: Chans=22, Timepoints=800
+Loading cls_query_token from pretrained REVE weights
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/scripts/our_tasks/predict_test.py:309: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict = torch.load(checkpoint_path, map_location="cpu")
+Traceback (most recent call last):
+  File "/mnt/dataset3/nzh/eeg_FM/reve_eeg/scripts/our_tasks/predict_test.py", line 394, in <module>
+    main()
+  File "/mnt/dataset3/nzh/eeg_FM/reve_eeg/scripts/our_tasks/predict_test.py", line 310, in main
+    missing_keys, unexpected_keys = model.load_state_dict(state_dict, strict=False)
+  File "/home/ningzh/envs/reve/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2584, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for ReveClassifier:
+	size mismatch for linear_head.2.weight: copying a param with shape torch.Size([256, 512]) from checkpoint, the shape in current model is torch.Size([512, 512]).
+	size mismatch for linear_head.2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([512]).
+	size mismatch for linear_head.5.weight: copying a param with shape torch.Size([4, 256]) from checkpoint, the shape in current model is torch.Size([4, 512]).
