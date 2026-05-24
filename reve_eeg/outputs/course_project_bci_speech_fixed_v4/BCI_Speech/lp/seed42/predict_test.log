@@ -1,0 +1,8 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+usage: predict_test.py [-h] [--resource RESOURCE] [--data-root DATA_ROOT]
+                       [--ckpt-root CKPT_ROOT] [--out-root OUT_ROOT] --dataset
+                       {BCIC2A,CHINESE,MDD,SEED,SLEEP} --mode MODE --seed SEED
+                       [--run-dir RUN_DIR] [--checkpoint CHECKPOINT]
+                       [--device DEVICE] [--batch-size BATCH_SIZE]
+                       [--num-workers NUM_WORKERS] [--python-exe PYTHON_EXE]
+predict_test.py: error: argument --dataset: invalid choice: 'BCI_Speech' (choose from 'BCIC2A', 'CHINESE', 'MDD', 'SEED', 'SLEEP')

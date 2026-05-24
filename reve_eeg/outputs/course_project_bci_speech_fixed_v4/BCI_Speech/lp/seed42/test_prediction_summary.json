@@ -1,0 +1,18 @@
+{
+  "dataset": "BCI_Speech",
+  "mode": "lp",
+  "seed": 42,
+  "run_dir": "outputs/course_project_bci_speech_fixed_v4/BCI_Speech/lp/seed42",
+  "checkpoint": "outputs/course_project_bci_speech_fixed_v4/BCI_Speech/lp/seed42/model_best.pth",
+  "prediction_csv": "outputs/course_project_bci_speech_fixed_v4/BCI_Speech/lp/seed42/test_predictions.csv",
+  "logits_npy": "outputs/course_project_bci_speech_fixed_v4/BCI_Speech/lp/seed42/test_logits.npy",
+  "logits_shape": [
+    250,
+    5
+  ],
+  "x_key": "X",
+  "channels_not_found": [],
+  "fallback_channels": [],
+  "normalization_stats_path": "data/course_project/stats/BCI_Speech_train_stats.json",
+  "non_finite_values_handled": 0
+}
