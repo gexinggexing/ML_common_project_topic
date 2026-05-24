@@ -1,0 +1,15 @@
+{
+  "dataset": "BCIC2A",
+  "method": "CSP+LDA",
+  "n_components": 4,
+  "feature_dim": 32,
+  "train_acc": 0.4625,
+  "train_f1": 0.4624179141758346,
+  "best_val_acc": 0.4222222222222222,
+  "best_val_f1": 0.41510551948051944,
+  "training_time_sec": 2.635843276977539,
+  "args": {
+    "n_components": 4,
+    "seed": 42
+  }
+}
