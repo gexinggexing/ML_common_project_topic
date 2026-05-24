@@ -30,6 +30,7 @@ RESOURCE_CONFIG_PATH = PROJECT_ROOT / "src" / "configs" / "our_tasks" / "resourc
 ENCODER_CONFIG_PATH = PROJECT_ROOT / "src" / "configs" / "encoder" / "base.yaml"
 COURSE_CONFIGS = {
     "BCIC2A": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_bcic2a.yaml",
+    "BCI_Speech": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_bci_speech.yaml",
     "CHINESE": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_chinese.yaml",
     "MDD": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_mdd.yaml",
     "SEED": PROJECT_ROOT / "src" / "configs" / "our_tasks" / "course_seed.yaml",
@@ -37,6 +38,7 @@ COURSE_CONFIGS = {
 }
 DEFAULT_BATCH_SIZES = {
     "BCIC2A": 16,
+    "BCI_Speech": 32,
     "CHINESE": 16,
     "MDD": 16,
     "SEED": 8,
