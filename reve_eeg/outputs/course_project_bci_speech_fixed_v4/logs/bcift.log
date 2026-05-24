@@ -1,0 +1,52 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+/mnt/dataset3/nzh/eeg_FM/ML_common_project_topic/reve_eeg/src/dt.py:66: IdrTorchWarning: Calling idr_torch only makes sense within a distributed execution but none was detected. You may have forgotten to use a launcher (such as srun). Back to default (non distributed) values
+  if idr_torch.is_master or kwargs.pop("force", False):
+Loaded external task config: /mnt/dataset3/nzh/eeg_FM/ML_common_project_topic/reve_eeg/src/configs/our_tasks/course_bci_speech.yaml
+Running with task: BCI_Speech
+Output directory: /mnt/dataset3/nzh/eeg_FM/ML_common_project_topic/reve_eeg/outputs/course_project_bci_speech_fixed_v4/BCI_Speech/ft/seed42
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]Loading weights:   1%|          | 1/140 [00:01<03:06,  1.34s/it]Loading weights:   1%|▏         | 2/140 [00:05<07:08,  3.10s/it]Loading weights:  13%|█▎        | 18/140 [00:15<01:37,  1.25it/s]Loading weights:  14%|█▍        | 20/140 [00:15<01:23,  1.44it/s]Loading weights:  21%|██▏       | 30/140 [00:24<01:23,  1.32it/s]Loading weights:  27%|██▋       | 38/140 [00:25<00:57,  1.78it/s]Loading weights:  31%|███▏      | 44/140 [00:28<00:50,  1.90it/s]Loading weights:  34%|███▎      | 47/140 [00:31<00:55,  1.67it/s]Loading weights: 100%|██████████| 140/140 [00:31<00:00,  4.47it/s]
+Detected input shape: Chans=64, Timepoints=600
+Loading cls_query_token from pretrained REVE weights
+Train: 4,050 | Valid: 200
+Total: 4,250
+>>> Setup Fine-Tuning (FT)
+Batch size for stage ft: 12
+Train: 4,050 | Valid: 200
+Total: 4,250
+Starting training stage: ft for 24 epochs. Device: cuda:0
+[BCI_Speech][ft][seed42] epoch 001/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 001/024 | train_loss=1.641 | train_acc=0.202 | val_loss=1.616 | val_acc=0.240 | val_bal_acc=0.240 | val_macro_f1=0.224 | val_weighted_f1=0.224 | best=0.240 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=405s
+[BCI_Speech][ft][seed42] epoch 002/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 002/024 | train_loss=1.612 | train_acc=0.238 | val_loss=1.617 | val_acc=0.210 | val_bal_acc=0.210 | val_macro_f1=0.154 | val_weighted_f1=0.154 | best=0.240 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=211s
+[BCI_Speech][ft][seed42] epoch 003/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 003/024 | train_loss=1.599 | train_acc=0.257 | val_loss=1.606 | val_acc=0.215 | val_bal_acc=0.215 | val_macro_f1=0.158 | val_weighted_f1=0.158 | best=0.240 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=214s
+[BCI_Speech][ft][seed42] epoch 004/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 004/024 | train_loss=1.556 | train_acc=0.293 | val_loss=1.602 | val_acc=0.295 | val_bal_acc=0.295 | val_macro_f1=0.283 | val_weighted_f1=0.283 | best=0.295 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=268s
+[BCI_Speech][ft][seed42] epoch 005/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 005/024 | train_loss=1.489 | train_acc=0.356 | val_loss=1.595 | val_acc=0.305 | val_bal_acc=0.305 | val_macro_f1=0.294 | val_weighted_f1=0.294 | best=0.305 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=260s
+[BCI_Speech][ft][seed42] epoch 006/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 006/024 | train_loss=1.401 | train_acc=0.405 | val_loss=1.621 | val_acc=0.270 | val_bal_acc=0.270 | val_macro_f1=0.266 | val_weighted_f1=0.266 | best=0.305 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=208s
+[BCI_Speech][ft][seed42] epoch 007/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 007/024 | train_loss=1.284 | train_acc=0.481 | val_loss=1.684 | val_acc=0.260 | val_bal_acc=0.260 | val_macro_f1=0.255 | val_weighted_f1=0.255 | best=0.305 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=209s
+[BCI_Speech][ft][seed42] epoch 008/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 008/024 | train_loss=1.160 | train_acc=0.538 | val_loss=1.731 | val_acc=0.280 | val_bal_acc=0.280 | val_macro_f1=0.275 | val_weighted_f1=0.275 | best=0.305 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=210s
+[BCI_Speech][ft][seed42] epoch 009/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 009/024 | train_loss=0.964 | train_acc=0.648 | val_loss=1.777 | val_acc=0.315 | val_bal_acc=0.315 | val_macro_f1=0.316 | val_weighted_f1=0.316 | best=0.315 | lr_head=2.5e-05 | lr_encoder=2.5e-06 | time=271s
+[BCI_Speech][ft][seed42] epoch 010/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 010/024 | train_loss=0.858 | train_acc=0.698 | val_loss=1.859 | val_acc=0.290 | val_bal_acc=0.290 | val_macro_f1=0.289 | val_weighted_f1=0.289 | best=0.315 | lr_head=2.5e-05 | lr_encoder=2.5e-06 | time=242s
+[BCI_Speech][ft][seed42] epoch 011/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 011/024 | train_loss=0.758 | train_acc=0.745 | val_loss=2.006 | val_acc=0.280 | val_bal_acc=0.280 | val_macro_f1=0.278 | val_weighted_f1=0.278 | best=0.315 | lr_head=2.5e-05 | lr_encoder=2.5e-06 | time=246s
+[BCI_Speech][ft][seed42] epoch 012/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 012/024 | train_loss=0.665 | train_acc=0.783 | val_loss=2.016 | val_acc=0.265 | val_bal_acc=0.265 | val_macro_f1=0.271 | val_weighted_f1=0.271 | best=0.315 | lr_head=2.5e-05 | lr_encoder=2.5e-06 | time=250s
+[BCI_Speech][ft][seed42] epoch 013/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 013/024 | train_loss=0.549 | train_acc=0.838 | val_loss=2.065 | val_acc=0.300 | val_bal_acc=0.300 | val_macro_f1=0.303 | val_weighted_f1=0.303 | best=0.315 | lr_head=1.3e-05 | lr_encoder=1.3e-06 | time=158s
+[BCI_Speech][ft][seed42] epoch 014/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 014/024 | train_loss=0.479 | train_acc=0.870 | val_loss=2.146 | val_acc=0.295 | val_bal_acc=0.295 | val_macro_f1=0.295 | val_weighted_f1=0.295 | best=0.315 | lr_head=1.3e-05 | lr_encoder=1.3e-06 | time=116s
+[BCI_Speech][ft][seed42] epoch 015/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 015/024 | train_loss=0.430 | train_acc=0.889 | val_loss=2.199 | val_acc=0.295 | val_bal_acc=0.295 | val_macro_f1=0.297 | val_weighted_f1=0.297 | best=0.315 | lr_head=1.3e-05 | lr_encoder=1.3e-06 | time=118s
+[BCI_Speech][ft][seed42] epoch 016/024 starting | train_steps=338
+[BCI_Speech][ft][seed42] epoch 016/024 | train_loss=0.374 | train_acc=0.907 | val_loss=2.242 | val_acc=0.285 | val_bal_acc=0.285 | val_macro_f1=0.288 | val_weighted_f1=0.288 | best=0.315 | lr_head=6.3e-06 | lr_encoder=6.3e-07 | time=117s
+Stage ft finished due to patience limit.
+Model saved to /mnt/dataset3/nzh/eeg_FM/ML_common_project_topic/reve_eeg/outputs/course_project_bci_speech_fixed_v4/BCI_Speech/ft/seed42
