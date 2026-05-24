@@ -1,0 +1,18 @@
+{
+  "study_name": "BCIC2A_ft_seed42",
+  "dataset": "BCIC2A",
+  "training_mode": "ft",
+  "seed": 42,
+  "best_trial_number": 9,
+  "best_value": 0.4333333333333333,
+  "best_params": {
+    "task.classifier.dropout": 0.26395978795727476,
+    "task.fine_tuning.optimizer.weight_decay": 1.4941899384581658e-06,
+    "task.fine_tuning.encoder_lr": 1.705827635043124e-05,
+    "task.fine_tuning.head_lr": 0.0002612533879325072
+  },
+  "best_trial_dir": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/trial_9",
+  "best_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/trial_9/model_best.pth",
+  "metrics_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/trial_9/metrics.csv",
+  "trials_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/ft/seed42/optuna_trials.csv"
+}

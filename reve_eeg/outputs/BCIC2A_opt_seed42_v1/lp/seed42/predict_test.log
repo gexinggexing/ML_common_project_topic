@@ -1,0 +1,51 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/src/dt.py:66: IdrTorchWarning: Calling idr_torch only makes sense within a distributed execution but none was detected. You may have forgotten to use a launcher (such as srun). Back to default (non distributed) values
+  if idr_torch.is_master or kwargs.pop("force", False):
+Loaded external task config: /mnt/dataset3/nzh/eeg_FM/reve_eeg/src/configs/our_tasks/course_bcic2a.yaml
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   9%|▉         | 13/140 [00:01<00:17,  7.13it/s]
+Loading weights:  13%|█▎        | 18/140 [00:03<00:28,  4.32it/s]
+Loading weights:  14%|█▎        | 19/140 [00:04<00:29,  4.07it/s]
+Loading weights:  19%|█▊        | 26/140 [00:04<00:18,  6.17it/s]
+Loading weights:  24%|██▎       | 33/140 [00:05<00:14,  7.63it/s]
+Loading weights:  24%|██▍       | 34/140 [00:05<00:16,  6.30it/s]
+Loading weights:  25%|██▌       | 35/140 [00:06<00:21,  4.96it/s]
+Loading weights:  30%|███       | 42/140 [00:07<00:17,  5.56it/s]
+Loading weights:  34%|███▎      | 47/140 [00:08<00:17,  5.18it/s]
+Loading weights:  34%|███▍      | 48/140 [00:08<00:17,  5.36it/s]
+Loading weights:  38%|███▊      | 53/140 [00:09<00:12,  6.92it/s]
+Loading weights:  39%|███▊      | 54/140 [00:09<00:16,  5.32it/s]
+Loading weights:  39%|███▉      | 55/140 [00:10<00:25,  3.34it/s]
+Loading weights:  47%|████▋     | 66/140 [00:11<00:11,  6.24it/s]
+Loading weights:  48%|████▊     | 67/140 [00:12<00:13,  5.37it/s]
+Loading weights:  49%|████▊     | 68/140 [00:14<00:25,  2.84it/s]
+Loading weights:  49%|████▉     | 69/140 [00:14<00:25,  2.82it/s]
+Loading weights:  50%|█████     | 70/140 [00:15<00:27,  2.55it/s]
+Loading weights:  51%|█████     | 71/140 [00:16<00:37,  1.85it/s]
+Loading weights:  57%|█████▋    | 80/140 [00:16<00:11,  5.20it/s]
+Loading weights:  64%|██████▎   | 89/140 [00:17<00:06,  7.72it/s]
+Loading weights:  65%|██████▌   | 91/140 [00:17<00:07,  6.58it/s]
+Loading weights:  74%|███████▎  | 103/140 [00:18<00:04,  8.13it/s]
+Loading weights:  74%|███████▍  | 104/140 [00:19<00:04,  7.72it/s]
+Loading weights:  78%|███████▊  | 109/140 [00:19<00:04,  7.53it/s]
+Loading weights:  79%|███████▊  | 110/140 [00:21<00:06,  4.63it/s]
+Loading weights:  81%|████████  | 113/140 [00:23<00:09,  2.93it/s]
+Loading weights:  85%|████████▌ | 119/140 [00:24<00:05,  3.77it/s]
+Loading weights:  90%|█████████ | 126/140 [00:26<00:04,  3.24it/s]
+Loading weights:  91%|█████████ | 127/140 [00:27<00:04,  2.93it/s]
+Loading weights: 100%|██████████| 140/140 [00:27<00:00,  5.09it/s]
+Detected input shape: Chans=22, Timepoints=800
+Loading cls_query_token from pretrained REVE weights
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/scripts/our_tasks/predict_test.py:309: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict = torch.load(checkpoint_path, map_location="cpu")
+Loaded test dataset for BCIC2A: 360 samples from /mnt/dataset3/panxy/course/project1_data/course project/course project/BCIC2A/test_x_only.h5 with batch_size=16
+Normalization stats: /mnt/dataset3/nzh/eeg_FM/reve_eeg/data/course_project/stats/BCIC2A_train_stats.json
+Channels not found: []
+Fallback channels: []
+Loaded checkpoint: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/lp/seed42/trial_13/model_best.pth
+Saved predictions to: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/lp/seed42/test_predictions.csv
+Saved logits to: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/BCIC2A/lp/seed42/test_logits.npy
+Logits shape: (360, 4)

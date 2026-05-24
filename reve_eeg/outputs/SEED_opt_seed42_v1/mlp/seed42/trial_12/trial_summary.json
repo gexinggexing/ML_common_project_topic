@@ -1,0 +1,11 @@
+{
+  "trial_number": 12,
+  "dataset": "SEED",
+  "training_mode": "mlp",
+  "seed": 42,
+  "best_val_balanced_accuracy": 0.4155555555555555,
+  "trial_dir": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/mlp/seed42/trial_12",
+  "metrics_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/mlp/seed42/trial_12/metrics.csv",
+  "best_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/mlp/seed42/trial_12/model_best.pth",
+  "final_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SEED/mlp/seed42/trial_12/model_final.pth"
+}

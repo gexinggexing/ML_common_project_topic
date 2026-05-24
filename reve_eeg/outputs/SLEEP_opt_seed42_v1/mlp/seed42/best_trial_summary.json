@@ -1,0 +1,18 @@
+{
+  "study_name": "SLEEP_mlp_seed42",
+  "dataset": "SLEEP",
+  "training_mode": "mlp",
+  "seed": 42,
+  "best_trial_number": 4,
+  "best_value": 0.577095233105166,
+  "best_params": {
+    "task.classifier.mlp_hidden_dim": 512,
+    "task.classifier.dropout": 0.13203677503379666,
+    "task.mlp_probing.optimizer.lr": 0.00041855489214290037,
+    "task.mlp_probing.optimizer.weight_decay": 0.0011028851024298613
+  },
+  "best_trial_dir": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/mlp/seed42/trial_4",
+  "best_checkpoint": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/mlp/seed42/trial_4/model_best.pth",
+  "metrics_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/mlp/seed42/trial_4/metrics.csv",
+  "trials_csv": "/mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/mlp/seed42/optuna_trials.csv"
+}

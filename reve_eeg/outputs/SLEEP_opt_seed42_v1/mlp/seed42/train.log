@@ -1,0 +1,493 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/src/dt.py:66: IdrTorchWarning: Calling idr_torch only makes sense within a distributed execution but none was detected. You may have forgotten to use a launcher (such as srun). Back to default (non distributed) values
+  if idr_torch.is_master or kwargs.pop("force", False):
+Loaded external task config: /mnt/dataset3/nzh/eeg_FM/reve_eeg/src/configs/our_tasks/course_sleep_optuna.yaml
+Running Optuna with task: SLEEP
+Training mode: mlp
+Output directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_optuna_seed42_v1/SLEEP/mlp/seed42
+Starting optuna search for 8 trials.
+Train: 3,921 | Valid: 1,941
+Total: 5,862
+[I 2026-05-22 11:00:09,354] A new study created in memory with name: SLEEP_mlp_seed42
+Enqueueing initial trial with params: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.1, 'task.mlp_probing.optimizer.lr': 0.0004, 'task.mlp_probing.optimizer.weight_decay': 0.0001}
+Trial 0 starting with params: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.1, 'task.mlp_probing.optimizer.lr': 0.0004, 'task.mlp_probing.optimizer.weight_decay': 0.0001}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=0 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   6%|▌         | 8/140 [00:00<00:13,  9.84it/s]
+Loading weights:  10%|█         | 14/140 [00:03<00:32,  3.90it/s]
+Loading weights:  11%|█         | 15/140 [00:04<00:50,  2.48it/s]
+Loading weights:  18%|█▊        | 25/140 [00:05<00:20,  5.54it/s]
+Loading weights:  19%|█▉        | 27/140 [00:05<00:20,  5.50it/s]
+Loading weights:  21%|██        | 29/140 [00:07<00:32,  3.45it/s]
+Loading weights:  21%|██▏       | 30/140 [00:07<00:35,  3.07it/s]
+Loading weights:  22%|██▏       | 31/140 [00:10<01:03,  1.71it/s]
+Loading weights:  39%|███▊      | 54/140 [00:10<00:10,  8.07it/s]
+Loading weights:  40%|████      | 56/140 [00:11<00:11,  7.11it/s]
+Loading weights:  41%|████▏     | 58/140 [00:13<00:20,  4.07it/s]
+Loading weights:  51%|█████▏    | 72/140 [00:14<00:10,  6.21it/s]
+Loading weights:  52%|█████▏    | 73/140 [00:15<00:15,  4.27it/s]
+Loading weights:  53%|█████▎    | 74/140 [00:17<00:22,  2.92it/s]
+Loading weights:  64%|██████▎   | 89/140 [00:18<00:08,  6.34it/s]
+Loading weights:  65%|██████▌   | 91/140 [00:19<00:10,  4.72it/s]
+Loading weights:  66%|██████▌   | 92/140 [00:20<00:12,  3.80it/s]
+Loading weights:  66%|██████▋   | 93/140 [00:28<00:44,  1.05it/s]
+Loading weights:  67%|██████▋   | 94/140 [00:29<00:45,  1.01it/s]
+Loading weights:  79%|███████▉  | 111/140 [00:30<00:08,  3.43it/s]
+Loading weights:  81%|████████  | 113/140 [00:34<00:12,  2.15it/s]
+Loading weights:  96%|█████████▌| 134/140 [00:35<00:01,  4.75it/s]
+Loading weights: 100%|██████████| 140/140 [00:35<00:00,  3.94it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 0
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.309 | train_acc=0.420 | val_loss=1.213 | val_acc=0.492 | val_bal_acc=0.494 | val_macro_f1=0.479 | val_weighted_f1=0.481 | best=0.494 | lr=4.0e-04 | time=173s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.191 | train_acc=0.493 | val_loss=1.124 | val_acc=0.513 | val_bal_acc=0.514 | val_macro_f1=0.501 | val_weighted_f1=0.503 | best=0.514 | lr=4.0e-04 | time=154s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.171 | train_acc=0.498 | val_loss=1.195 | val_acc=0.508 | val_bal_acc=0.504 | val_macro_f1=0.496 | val_weighted_f1=0.498 | best=0.514 | lr=4.0e-04 | time=82s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.138 | train_acc=0.517 | val_loss=1.125 | val_acc=0.526 | val_bal_acc=0.526 | val_macro_f1=0.511 | val_weighted_f1=0.511 | best=0.526 | lr=4.0e-04 | time=120s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.118 | train_acc=0.522 | val_loss=1.148 | val_acc=0.521 | val_bal_acc=0.519 | val_macro_f1=0.521 | val_weighted_f1=0.523 | best=0.526 | lr=4.0e-04 | time=81s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.116 | train_acc=0.539 | val_loss=1.211 | val_acc=0.502 | val_bal_acc=0.504 | val_macro_f1=0.490 | val_weighted_f1=0.491 | best=0.526 | lr=4.0e-04 | time=80s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.100 | train_acc=0.541 | val_loss=1.126 | val_acc=0.549 | val_bal_acc=0.551 | val_macro_f1=0.517 | val_weighted_f1=0.518 | best=0.551 | lr=4.0e-04 | time=143s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.088 | train_acc=0.531 | val_loss=1.095 | val_acc=0.547 | val_bal_acc=0.549 | val_macro_f1=0.516 | val_weighted_f1=0.517 | best=0.551 | lr=4.0e-04 | time=78s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.066 | train_acc=0.553 | val_loss=1.134 | val_acc=0.537 | val_bal_acc=0.536 | val_macro_f1=0.507 | val_weighted_f1=0.509 | best=0.551 | lr=4.0e-04 | time=73s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.065 | train_acc=0.556 | val_loss=1.068 | val_acc=0.558 | val_bal_acc=0.557 | val_macro_f1=0.555 | val_weighted_f1=0.556 | best=0.557 | lr=4.0e-04 | time=132s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.051 | train_acc=0.560 | val_loss=1.062 | val_acc=0.556 | val_bal_acc=0.554 | val_macro_f1=0.550 | val_weighted_f1=0.551 | best=0.557 | lr=4.0e-04 | time=90s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.063 | train_acc=0.557 | val_loss=1.091 | val_acc=0.565 | val_bal_acc=0.563 | val_macro_f1=0.567 | val_weighted_f1=0.569 | best=0.563 | lr=4.0e-04 | time=113s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.044 | train_acc=0.570 | val_loss=1.152 | val_acc=0.540 | val_bal_acc=0.540 | val_macro_f1=0.530 | val_weighted_f1=0.531 | best=0.563 | lr=4.0e-04 | time=83s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.034 | train_acc=0.584 | val_loss=1.121 | val_acc=0.573 | val_bal_acc=0.573 | val_macro_f1=0.563 | val_weighted_f1=0.564 | best=0.573 | lr=4.0e-04 | time=136s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=1.028 | train_acc=0.578 | val_loss=1.088 | val_acc=0.554 | val_bal_acc=0.554 | val_macro_f1=0.541 | val_weighted_f1=0.542 | best=0.573 | lr=4.0e-04 | time=75s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.001 | train_acc=0.598 | val_loss=1.207 | val_acc=0.539 | val_bal_acc=0.539 | val_macro_f1=0.532 | val_weighted_f1=0.533 | best=0.573 | lr=4.0e-04 | time=79s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=1.040 | train_acc=0.569 | val_loss=1.108 | val_acc=0.563 | val_bal_acc=0.561 | val_macro_f1=0.546 | val_weighted_f1=0.547 | best=0.573 | lr=4.0e-04 | time=77s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=1.012 | train_acc=0.588 | val_loss=1.076 | val_acc=0.571 | val_bal_acc=0.567 | val_macro_f1=0.563 | val_weighted_f1=0.565 | best=0.573 | lr=4.0e-04 | time=76s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=0 best_val_bal_acc=0.573 ==========
+[I 2026-05-22 11:32:25,552] Trial 0 finished with value: 0.5732563001600983 and parameters: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.1, 'task.mlp_probing.optimizer.lr': 0.0004, 'task.mlp_probing.optimizer.weight_decay': 0.0001}. Best is trial 0 with value: 0.5732563001600983.
+Trial 1 starting with params: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.13442237607644653, 'task.mlp_probing.optimizer.lr': 0.0008085424645164409, 'task.mlp_probing.optimizer.weight_decay': 9.23717411664381e-05}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=1 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   6%|▌         | 8/140 [00:00<00:16,  8.22it/s]
+Loading weights:   8%|▊         | 11/140 [00:01<00:20,  6.17it/s]
+Loading weights:   9%|▊         | 12/140 [00:03<00:52,  2.42it/s]
+Loading weights:  14%|█▍        | 20/140 [00:05<00:38,  3.09it/s]
+Loading weights:  15%|█▌        | 21/140 [00:06<00:40,  2.91it/s]
+Loading weights:  16%|█▋        | 23/140 [00:06<00:36,  3.18it/s]
+Loading weights:  17%|█▋        | 24/140 [00:06<00:33,  3.48it/s]
+Loading weights:  18%|█▊        | 25/140 [00:08<00:47,  2.40it/s]
+Loading weights:  19%|█▊        | 26/140 [00:08<00:52,  2.17it/s]
+Loading weights:  19%|█▉        | 27/140 [00:09<01:00,  1.86it/s]
+Loading weights:  28%|██▊       | 39/140 [00:11<00:22,  4.46it/s]
+Loading weights:  29%|██▊       | 40/140 [00:11<00:24,  4.03it/s]
+Loading weights:  29%|██▉       | 41/140 [00:12<00:32,  3.07it/s]
+Loading weights:  40%|████      | 56/140 [00:13<00:13,  6.25it/s]
+Loading weights:  42%|████▏     | 59/140 [00:15<00:17,  4.74it/s]
+Loading weights:  49%|████▊     | 68/140 [00:16<00:12,  5.87it/s]
+Loading weights:  51%|█████▏    | 72/140 [00:16<00:09,  6.97it/s]
+Loading weights:  53%|█████▎    | 74/140 [00:17<00:13,  4.73it/s]
+Loading weights:  54%|█████▎    | 75/140 [00:17<00:13,  4.82it/s]
+Loading weights:  54%|█████▍    | 76/140 [00:19<00:21,  3.02it/s]
+Loading weights:  55%|█████▌    | 77/140 [00:20<00:30,  2.07it/s]
+Loading weights:  64%|██████▎   | 89/140 [00:22<00:13,  3.66it/s]
+Loading weights:  69%|██████▊   | 96/140 [00:24<00:11,  3.68it/s]
+Loading weights:  69%|██████▉   | 97/140 [00:24<00:11,  3.79it/s]
+Loading weights:  70%|███████   | 98/140 [00:25<00:12,  3.50it/s]
+Loading weights:  80%|████████  | 112/140 [00:26<00:04,  6.87it/s]
+Loading weights:  81%|████████▏ | 114/140 [00:27<00:05,  4.98it/s]
+Loading weights:  82%|████████▏ | 115/140 [00:27<00:04,  5.04it/s]
+Loading weights:  83%|████████▎ | 116/140 [00:28<00:05,  4.33it/s]
+Loading weights:  87%|████████▋ | 122/140 [00:29<00:03,  5.29it/s]
+Loading weights:  91%|█████████▏| 128/140 [00:30<00:02,  5.94it/s]
+Loading weights:  92%|█████████▏| 129/140 [00:30<00:01,  5.95it/s]
+Loading weights:  93%|█████████▎| 130/140 [00:30<00:02,  4.89it/s]
+Loading weights: 100%|██████████| 140/140 [00:30<00:00,  4.56it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 1
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.331 | train_acc=0.433 | val_loss=1.344 | val_acc=0.465 | val_bal_acc=0.461 | val_macro_f1=0.435 | val_weighted_f1=0.437 | best=0.461 | lr=8.1e-04 | time=129s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.224 | train_acc=0.478 | val_loss=1.156 | val_acc=0.511 | val_bal_acc=0.513 | val_macro_f1=0.474 | val_weighted_f1=0.474 | best=0.513 | lr=8.1e-04 | time=120s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.192 | train_acc=0.500 | val_loss=1.176 | val_acc=0.518 | val_bal_acc=0.520 | val_macro_f1=0.488 | val_weighted_f1=0.488 | best=0.520 | lr=8.1e-04 | time=104s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.183 | train_acc=0.500 | val_loss=1.204 | val_acc=0.515 | val_bal_acc=0.512 | val_macro_f1=0.506 | val_weighted_f1=0.508 | best=0.520 | lr=8.1e-04 | time=94s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.159 | train_acc=0.516 | val_loss=1.175 | val_acc=0.514 | val_bal_acc=0.512 | val_macro_f1=0.503 | val_weighted_f1=0.504 | best=0.520 | lr=8.1e-04 | time=80s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.124 | train_acc=0.534 | val_loss=1.156 | val_acc=0.530 | val_bal_acc=0.534 | val_macro_f1=0.511 | val_weighted_f1=0.513 | best=0.534 | lr=8.1e-04 | time=106s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.129 | train_acc=0.539 | val_loss=1.146 | val_acc=0.550 | val_bal_acc=0.551 | val_macro_f1=0.540 | val_weighted_f1=0.540 | best=0.551 | lr=8.1e-04 | time=116s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.101 | train_acc=0.543 | val_loss=1.135 | val_acc=0.541 | val_bal_acc=0.539 | val_macro_f1=0.547 | val_weighted_f1=0.549 | best=0.551 | lr=8.1e-04 | time=81s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.093 | train_acc=0.542 | val_loss=1.158 | val_acc=0.548 | val_bal_acc=0.545 | val_macro_f1=0.535 | val_weighted_f1=0.537 | best=0.551 | lr=8.1e-04 | time=87s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.089 | train_acc=0.541 | val_loss=1.130 | val_acc=0.555 | val_bal_acc=0.551 | val_macro_f1=0.542 | val_weighted_f1=0.544 | best=0.551 | lr=8.1e-04 | time=129s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.078 | train_acc=0.553 | val_loss=1.117 | val_acc=0.543 | val_bal_acc=0.541 | val_macro_f1=0.539 | val_weighted_f1=0.541 | best=0.551 | lr=8.1e-04 | time=74s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.085 | train_acc=0.562 | val_loss=1.091 | val_acc=0.558 | val_bal_acc=0.561 | val_macro_f1=0.548 | val_weighted_f1=0.549 | best=0.561 | lr=8.1e-04 | time=128s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.055 | train_acc=0.564 | val_loss=1.161 | val_acc=0.534 | val_bal_acc=0.533 | val_macro_f1=0.535 | val_weighted_f1=0.537 | best=0.561 | lr=8.1e-04 | time=85s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.048 | train_acc=0.567 | val_loss=1.111 | val_acc=0.562 | val_bal_acc=0.564 | val_macro_f1=0.554 | val_weighted_f1=0.555 | best=0.564 | lr=8.1e-04 | time=132s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=1.051 | train_acc=0.570 | val_loss=1.118 | val_acc=0.548 | val_bal_acc=0.545 | val_macro_f1=0.543 | val_weighted_f1=0.545 | best=0.564 | lr=8.1e-04 | time=95s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.036 | train_acc=0.578 | val_loss=1.176 | val_acc=0.548 | val_bal_acc=0.550 | val_macro_f1=0.534 | val_weighted_f1=0.534 | best=0.564 | lr=8.1e-04 | time=72s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=1.029 | train_acc=0.583 | val_loss=1.180 | val_acc=0.548 | val_bal_acc=0.548 | val_macro_f1=0.543 | val_weighted_f1=0.544 | best=0.564 | lr=8.1e-04 | time=75s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=1.031 | train_acc=0.586 | val_loss=1.145 | val_acc=0.558 | val_bal_acc=0.557 | val_macro_f1=0.557 | val_weighted_f1=0.559 | best=0.564 | lr=8.1e-04 | time=78s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=1 best_val_bal_acc=0.564 ==========
+[I 2026-05-22 12:03:28,822] Trial 1 finished with value: 0.5637958808265351 and parameters: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.13442237607644653, 'task.mlp_probing.optimizer.lr': 0.0008085424645164409, 'task.mlp_probing.optimizer.weight_decay': 9.23717411664381e-05}. Best is trial 0 with value: 0.5732563001600983.
+Trial 2 starting with params: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.20209366451506927, 'task.mlp_probing.optimizer.lr': 0.00031384075399867623, 'task.mlp_probing.optimizer.weight_decay': 0.003163937315446592}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=2 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   5%|▌         | 7/140 [00:01<00:23,  5.77it/s]
+Loading weights:   6%|▌         | 8/140 [00:03<01:01,  2.15it/s]
+Loading weights:  13%|█▎        | 18/140 [00:03<00:22,  5.32it/s]
+Loading weights:  14%|█▍        | 20/140 [00:04<00:27,  4.40it/s]
+Loading weights:  15%|█▌        | 21/140 [00:05<00:28,  4.11it/s]
+Loading weights:  16%|█▌        | 22/140 [00:05<00:32,  3.61it/s]
+Loading weights:  21%|██▏       | 30/140 [00:06<00:21,  5.18it/s]
+Loading weights:  22%|██▏       | 31/140 [00:08<00:34,  3.16it/s]
+Loading weights:  23%|██▎       | 32/140 [00:10<00:58,  1.84it/s]
+Loading weights:  24%|██▎       | 33/140 [00:12<01:06,  1.60it/s]
+Loading weights:  24%|██▍       | 34/140 [00:12<01:23,  1.26it/s]
+Loading weights:  25%|██▌       | 35/140 [00:13<01:16,  1.37it/s]
+Loading weights:  54%|█████▎    | 75/140 [00:14<00:05, 11.89it/s]
+Loading weights:  55%|█████▌    | 77/140 [00:15<00:06, 10.26it/s]
+Loading weights:  56%|█████▌    | 78/140 [00:15<00:06, 10.16it/s]
+Loading weights:  61%|██████▏   | 86/140 [00:16<00:05,  9.39it/s]
+Loading weights:  62%|██████▏   | 87/140 [00:16<00:05,  9.34it/s]
+Loading weights:  63%|██████▎   | 88/140 [00:17<00:09,  5.59it/s]
+Loading weights:  64%|██████▎   | 89/140 [00:18<00:12,  3.94it/s]
+Loading weights:  73%|███████▎  | 102/140 [00:20<00:07,  5.02it/s]
+Loading weights:  74%|███████▎  | 103/140 [00:21<00:08,  4.58it/s]
+Loading weights:  74%|███████▍  | 104/140 [00:21<00:09,  3.98it/s]
+Loading weights:  76%|███████▌  | 106/140 [00:21<00:07,  4.68it/s]
+Loading weights:  76%|███████▋  | 107/140 [00:22<00:07,  4.28it/s]
+Loading weights:  89%|████████▉ | 125/140 [00:23<00:01,  9.36it/s]
+Loading weights:  94%|█████████▍| 132/140 [00:23<00:00, 10.42it/s]
+Loading weights: 100%|██████████| 140/140 [00:23<00:00,  5.85it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 2
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.321 | train_acc=0.433 | val_loss=1.183 | val_acc=0.482 | val_bal_acc=0.482 | val_macro_f1=0.473 | val_weighted_f1=0.475 | best=0.482 | lr=3.1e-04 | time=117s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.205 | train_acc=0.483 | val_loss=1.138 | val_acc=0.512 | val_bal_acc=0.508 | val_macro_f1=0.492 | val_weighted_f1=0.494 | best=0.508 | lr=3.1e-04 | time=100s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.170 | train_acc=0.489 | val_loss=1.143 | val_acc=0.517 | val_bal_acc=0.516 | val_macro_f1=0.496 | val_weighted_f1=0.498 | best=0.516 | lr=3.1e-04 | time=124s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.179 | train_acc=0.489 | val_loss=1.157 | val_acc=0.519 | val_bal_acc=0.519 | val_macro_f1=0.505 | val_weighted_f1=0.506 | best=0.519 | lr=3.1e-04 | time=128s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.152 | train_acc=0.511 | val_loss=1.116 | val_acc=0.524 | val_bal_acc=0.528 | val_macro_f1=0.487 | val_weighted_f1=0.489 | best=0.528 | lr=3.1e-04 | time=117s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.142 | train_acc=0.518 | val_loss=1.094 | val_acc=0.537 | val_bal_acc=0.534 | val_macro_f1=0.538 | val_weighted_f1=0.540 | best=0.534 | lr=3.1e-04 | time=115s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.127 | train_acc=0.519 | val_loss=1.110 | val_acc=0.520 | val_bal_acc=0.519 | val_macro_f1=0.519 | val_weighted_f1=0.521 | best=0.534 | lr=3.1e-04 | time=77s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.109 | train_acc=0.530 | val_loss=1.147 | val_acc=0.520 | val_bal_acc=0.515 | val_macro_f1=0.501 | val_weighted_f1=0.504 | best=0.534 | lr=3.1e-04 | time=72s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.110 | train_acc=0.532 | val_loss=1.089 | val_acc=0.531 | val_bal_acc=0.534 | val_macro_f1=0.527 | val_weighted_f1=0.528 | best=0.534 | lr=3.1e-04 | time=123s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.091 | train_acc=0.534 | val_loss=1.057 | val_acc=0.543 | val_bal_acc=0.542 | val_macro_f1=0.521 | val_weighted_f1=0.522 | best=0.542 | lr=3.1e-04 | time=131s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.080 | train_acc=0.543 | val_loss=1.082 | val_acc=0.551 | val_bal_acc=0.552 | val_macro_f1=0.547 | val_weighted_f1=0.548 | best=0.552 | lr=3.1e-04 | time=121s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.088 | train_acc=0.540 | val_loss=1.048 | val_acc=0.546 | val_bal_acc=0.544 | val_macro_f1=0.531 | val_weighted_f1=0.532 | best=0.552 | lr=3.1e-04 | time=74s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.072 | train_acc=0.554 | val_loss=1.128 | val_acc=0.539 | val_bal_acc=0.537 | val_macro_f1=0.539 | val_weighted_f1=0.540 | best=0.552 | lr=3.1e-04 | time=77s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.073 | train_acc=0.559 | val_loss=1.046 | val_acc=0.568 | val_bal_acc=0.569 | val_macro_f1=0.562 | val_weighted_f1=0.563 | best=0.569 | lr=3.1e-04 | time=116s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=1.066 | train_acc=0.560 | val_loss=1.086 | val_acc=0.561 | val_bal_acc=0.559 | val_macro_f1=0.553 | val_weighted_f1=0.554 | best=0.569 | lr=3.1e-04 | time=78s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.058 | train_acc=0.571 | val_loss=1.110 | val_acc=0.547 | val_bal_acc=0.544 | val_macro_f1=0.543 | val_weighted_f1=0.544 | best=0.569 | lr=3.1e-04 | time=91s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=1.065 | train_acc=0.556 | val_loss=1.098 | val_acc=0.554 | val_bal_acc=0.557 | val_macro_f1=0.535 | val_weighted_f1=0.536 | best=0.569 | lr=3.1e-04 | time=73s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=1.054 | train_acc=0.558 | val_loss=1.070 | val_acc=0.565 | val_bal_acc=0.566 | val_macro_f1=0.547 | val_weighted_f1=0.548 | best=0.569 | lr=3.1e-04 | time=73s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=2 best_val_bal_acc=0.569 ==========
+[I 2026-05-22 12:34:51,762] Trial 2 finished with value: 0.5693715235524442 and parameters: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.20209366451506927, 'task.mlp_probing.optimizer.lr': 0.00031384075399867623, 'task.mlp_probing.optimizer.weight_decay': 0.003163937315446592}. Best is trial 0 with value: 0.5732563001600983.
+Trial 3 starting with params: {'task.classifier.mlp_hidden_dim': 256, 'task.classifier.dropout': 0.19342436611340913, 'task.mlp_probing.optimizer.lr': 0.0002327545941904528, 'task.mlp_probing.optimizer.weight_decay': 0.006087289274844095}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=3 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   1%|          | 1/140 [00:00<00:47,  2.90it/s]
+Loading weights:   1%|▏         | 2/140 [00:00<01:03,  2.18it/s]
+Loading weights:   2%|▏         | 3/140 [00:01<01:10,  1.94it/s]
+Loading weights:  11%|█▏        | 16/140 [00:02<00:19,  6.49it/s]
+Loading weights:  12%|█▏        | 17/140 [00:04<00:34,  3.56it/s]
+Loading weights:  17%|█▋        | 24/140 [00:06<00:31,  3.68it/s]
+Loading weights:  23%|██▎       | 32/140 [00:06<00:19,  5.56it/s]
+Loading weights:  24%|██▎       | 33/140 [00:07<00:22,  4.75it/s]
+Loading weights:  24%|██▍       | 34/140 [00:07<00:21,  4.95it/s]
+Loading weights:  31%|███▏      | 44/140 [00:08<00:13,  7.02it/s]
+Loading weights:  32%|███▏      | 45/140 [00:08<00:16,  5.93it/s]
+Loading weights:  33%|███▎      | 46/140 [00:09<00:19,  4.74it/s]
+Loading weights:  34%|███▎      | 47/140 [00:10<00:22,  4.10it/s]
+Loading weights:  34%|███▍      | 48/140 [00:10<00:28,  3.19it/s]
+Loading weights:  35%|███▌      | 49/140 [00:12<00:44,  2.04it/s]
+Loading weights:  48%|████▊     | 67/140 [00:12<00:08,  9.10it/s]
+Loading weights:  50%|█████     | 70/140 [00:15<00:18,  3.88it/s]
+Loading weights:  51%|█████     | 71/140 [00:16<00:20,  3.32it/s]
+Loading weights:  59%|█████▉    | 83/140 [00:17<00:11,  4.89it/s]
+Loading weights:  60%|██████    | 84/140 [00:18<00:12,  4.52it/s]
+Loading weights:  66%|██████▋   | 93/140 [00:19<00:07,  6.30it/s]
+Loading weights:  68%|██████▊   | 95/140 [00:19<00:07,  6.16it/s]
+Loading weights:  69%|██████▊   | 96/140 [00:20<00:08,  5.06it/s]
+Loading weights:  69%|██████▉   | 97/140 [00:21<00:12,  3.46it/s]
+Loading weights:  70%|███████   | 98/140 [00:21<00:13,  3.18it/s]
+Loading weights:  71%|███████▏  | 100/140 [00:22<00:12,  3.22it/s]
+Loading weights:  72%|███████▏  | 101/140 [00:23<00:16,  2.30it/s]
+Loading weights:  73%|███████▎  | 102/140 [00:23<00:16,  2.25it/s]
+Loading weights:  74%|███████▎  | 103/140 [00:25<00:22,  1.66it/s]
+Loading weights:  74%|███████▍  | 104/140 [00:25<00:20,  1.73it/s]
+Loading weights: 100%|██████████| 140/140 [00:25<00:00,  5.47it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 3
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.351 | train_acc=0.420 | val_loss=1.158 | val_acc=0.490 | val_bal_acc=0.489 | val_macro_f1=0.464 | val_weighted_f1=0.466 | best=0.489 | lr=2.3e-04 | time=107s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.201 | train_acc=0.469 | val_loss=1.159 | val_acc=0.497 | val_bal_acc=0.497 | val_macro_f1=0.451 | val_weighted_f1=0.452 | best=0.497 | lr=2.3e-04 | time=114s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.163 | train_acc=0.489 | val_loss=1.105 | val_acc=0.519 | val_bal_acc=0.520 | val_macro_f1=0.497 | val_weighted_f1=0.499 | best=0.520 | lr=2.3e-04 | time=119s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.149 | train_acc=0.496 | val_loss=1.169 | val_acc=0.518 | val_bal_acc=0.517 | val_macro_f1=0.492 | val_weighted_f1=0.494 | best=0.520 | lr=2.3e-04 | time=82s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.135 | train_acc=0.510 | val_loss=1.104 | val_acc=0.524 | val_bal_acc=0.520 | val_macro_f1=0.503 | val_weighted_f1=0.505 | best=0.520 | lr=2.3e-04 | time=142s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.118 | train_acc=0.522 | val_loss=1.134 | val_acc=0.528 | val_bal_acc=0.526 | val_macro_f1=0.513 | val_weighted_f1=0.515 | best=0.526 | lr=2.3e-04 | time=122s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.119 | train_acc=0.515 | val_loss=1.179 | val_acc=0.528 | val_bal_acc=0.525 | val_macro_f1=0.510 | val_weighted_f1=0.512 | best=0.526 | lr=2.3e-04 | time=77s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.098 | train_acc=0.536 | val_loss=1.085 | val_acc=0.543 | val_bal_acc=0.539 | val_macro_f1=0.539 | val_weighted_f1=0.541 | best=0.539 | lr=2.3e-04 | time=127s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.101 | train_acc=0.528 | val_loss=1.089 | val_acc=0.540 | val_bal_acc=0.536 | val_macro_f1=0.525 | val_weighted_f1=0.528 | best=0.539 | lr=2.3e-04 | time=95s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.073 | train_acc=0.547 | val_loss=1.159 | val_acc=0.548 | val_bal_acc=0.546 | val_macro_f1=0.540 | val_weighted_f1=0.542 | best=0.546 | lr=2.3e-04 | time=123s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.108 | train_acc=0.531 | val_loss=1.076 | val_acc=0.549 | val_bal_acc=0.551 | val_macro_f1=0.538 | val_weighted_f1=0.540 | best=0.551 | lr=2.3e-04 | time=123s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.085 | train_acc=0.536 | val_loss=1.073 | val_acc=0.557 | val_bal_acc=0.555 | val_macro_f1=0.548 | val_weighted_f1=0.549 | best=0.555 | lr=2.3e-04 | time=120s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.094 | train_acc=0.545 | val_loss=1.057 | val_acc=0.560 | val_bal_acc=0.558 | val_macro_f1=0.549 | val_weighted_f1=0.551 | best=0.558 | lr=2.3e-04 | time=125s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.074 | train_acc=0.551 | val_loss=1.094 | val_acc=0.545 | val_bal_acc=0.545 | val_macro_f1=0.543 | val_weighted_f1=0.544 | best=0.558 | lr=2.3e-04 | time=77s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=1.071 | train_acc=0.548 | val_loss=1.088 | val_acc=0.554 | val_bal_acc=0.551 | val_macro_f1=0.547 | val_weighted_f1=0.549 | best=0.558 | lr=2.3e-04 | time=96s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.057 | train_acc=0.553 | val_loss=1.063 | val_acc=0.570 | val_bal_acc=0.568 | val_macro_f1=0.567 | val_weighted_f1=0.569 | best=0.568 | lr=2.3e-04 | time=121s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=1.045 | train_acc=0.556 | val_loss=1.051 | val_acc=0.561 | val_bal_acc=0.559 | val_macro_f1=0.548 | val_weighted_f1=0.549 | best=0.568 | lr=2.3e-04 | time=74s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=1.039 | train_acc=0.555 | val_loss=1.115 | val_acc=0.554 | val_bal_acc=0.551 | val_macro_f1=0.547 | val_weighted_f1=0.549 | best=0.568 | lr=2.3e-04 | time=81s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=3 best_val_bal_acc=0.568 ==========
+[I 2026-05-22 13:08:14,706] Trial 3 finished with value: 0.5682780070817298 and parameters: {'task.classifier.mlp_hidden_dim': 256, 'task.classifier.dropout': 0.19342436611340913, 'task.mlp_probing.optimizer.lr': 0.0002327545941904528, 'task.mlp_probing.optimizer.weight_decay': 0.006087289274844095}. Best is trial 0 with value: 0.5732563001600983.
+Trial 4 starting with params: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.13203677503379666, 'task.mlp_probing.optimizer.lr': 0.00041855489214290037, 'task.mlp_probing.optimizer.weight_decay': 0.0011028851024298613}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=4 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 11/140 [00:00<00:03, 35.33it/s]
+Loading weights:  11%|█         | 15/140 [00:03<00:40,  3.11it/s]
+Loading weights:  13%|█▎        | 18/140 [00:06<01:02,  1.95it/s]
+Loading weights:  14%|█▍        | 20/140 [00:10<01:06,  1.81it/s]
+Loading weights:  15%|█▌        | 21/140 [00:10<01:29,  1.33it/s]
+Loading weights:  26%|██▌       | 36/140 [00:12<00:31,  3.26it/s]
+Loading weights:  26%|██▋       | 37/140 [00:12<00:31,  3.31it/s]
+Loading weights:  27%|██▋       | 38/140 [00:13<00:34,  2.97it/s]
+Loading weights:  28%|██▊       | 39/140 [00:17<01:17,  1.31it/s]
+Loading weights:  32%|███▏      | 45/140 [00:18<00:46,  2.06it/s]
+Loading weights:  39%|███▊      | 54/140 [00:20<00:28,  3.07it/s]
+Loading weights:  47%|████▋     | 66/140 [00:21<00:13,  5.30it/s]
+Loading weights:  48%|████▊     | 67/140 [00:21<00:16,  4.39it/s]
+Loading weights:  51%|█████▏    | 72/140 [00:23<00:16,  4.10it/s]
+Loading weights:  52%|█████▏    | 73/140 [00:24<00:18,  3.54it/s]
+Loading weights:  56%|█████▋    | 79/140 [00:25<00:14,  4.29it/s]
+Loading weights:  57%|█████▋    | 80/140 [00:26<00:18,  3.19it/s]
+Loading weights:  59%|█████▉    | 83/140 [00:26<00:13,  4.15it/s]
+Loading weights:  66%|██████▌   | 92/140 [00:26<00:07,  6.79it/s]
+Loading weights:  67%|██████▋   | 94/140 [00:28<00:09,  4.87it/s]
+Loading weights:  71%|███████   | 99/140 [00:28<00:07,  5.65it/s]
+Loading weights:  71%|███████▏  | 100/140 [00:29<00:08,  4.88it/s]
+Loading weights:  72%|███████▏  | 101/140 [00:30<00:11,  3.27it/s]
+Loading weights:  79%|███████▊  | 110/140 [00:30<00:04,  6.06it/s]
+Loading weights:  79%|███████▉  | 111/140 [00:31<00:04,  6.21it/s]
+Loading weights:  80%|████████  | 112/140 [00:32<00:07,  3.65it/s]
+Loading weights:  81%|████████  | 113/140 [00:32<00:08,  3.30it/s]
+Loading weights:  81%|████████▏ | 114/140 [00:33<00:11,  2.22it/s]
+Loading weights:  86%|████████▌ | 120/140 [00:34<00:04,  4.24it/s]
+Loading weights: 100%|██████████| 140/140 [00:34<00:00,  4.07it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 4
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.302 | train_acc=0.438 | val_loss=1.253 | val_acc=0.441 | val_bal_acc=0.436 | val_macro_f1=0.423 | val_weighted_f1=0.427 | best=0.436 | lr=4.2e-04 | time=174s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.200 | train_acc=0.479 | val_loss=1.190 | val_acc=0.504 | val_bal_acc=0.507 | val_macro_f1=0.458 | val_weighted_f1=0.459 | best=0.507 | lr=4.2e-04 | time=134s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.172 | train_acc=0.492 | val_loss=1.178 | val_acc=0.517 | val_bal_acc=0.513 | val_macro_f1=0.495 | val_weighted_f1=0.497 | best=0.513 | lr=4.2e-04 | time=139s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.154 | train_acc=0.505 | val_loss=1.158 | val_acc=0.518 | val_bal_acc=0.512 | val_macro_f1=0.492 | val_weighted_f1=0.496 | best=0.513 | lr=4.2e-04 | time=98s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.135 | train_acc=0.513 | val_loss=1.071 | val_acc=0.548 | val_bal_acc=0.549 | val_macro_f1=0.533 | val_weighted_f1=0.534 | best=0.549 | lr=4.2e-04 | time=172s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.110 | train_acc=0.536 | val_loss=1.097 | val_acc=0.549 | val_bal_acc=0.550 | val_macro_f1=0.529 | val_weighted_f1=0.530 | best=0.550 | lr=4.2e-04 | time=147s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.099 | train_acc=0.538 | val_loss=1.138 | val_acc=0.534 | val_bal_acc=0.531 | val_macro_f1=0.532 | val_weighted_f1=0.535 | best=0.550 | lr=4.2e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.105 | train_acc=0.540 | val_loss=1.198 | val_acc=0.541 | val_bal_acc=0.538 | val_macro_f1=0.535 | val_weighted_f1=0.537 | best=0.550 | lr=4.2e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.088 | train_acc=0.539 | val_loss=1.262 | val_acc=0.519 | val_bal_acc=0.514 | val_macro_f1=0.506 | val_weighted_f1=0.509 | best=0.550 | lr=4.2e-04 | time=69s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.087 | train_acc=0.551 | val_loss=1.066 | val_acc=0.557 | val_bal_acc=0.554 | val_macro_f1=0.561 | val_weighted_f1=0.563 | best=0.554 | lr=4.2e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.067 | train_acc=0.556 | val_loss=1.145 | val_acc=0.571 | val_bal_acc=0.569 | val_macro_f1=0.563 | val_weighted_f1=0.564 | best=0.569 | lr=4.2e-04 | time=94s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.059 | train_acc=0.551 | val_loss=1.136 | val_acc=0.561 | val_bal_acc=0.561 | val_macro_f1=0.531 | val_weighted_f1=0.532 | best=0.569 | lr=4.2e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.058 | train_acc=0.559 | val_loss=1.061 | val_acc=0.559 | val_bal_acc=0.557 | val_macro_f1=0.542 | val_weighted_f1=0.544 | best=0.569 | lr=4.2e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.051 | train_acc=0.570 | val_loss=1.057 | val_acc=0.577 | val_bal_acc=0.577 | val_macro_f1=0.563 | val_weighted_f1=0.564 | best=0.577 | lr=4.2e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=1.035 | train_acc=0.578 | val_loss=1.066 | val_acc=0.573 | val_bal_acc=0.574 | val_macro_f1=0.554 | val_weighted_f1=0.555 | best=0.577 | lr=4.2e-04 | time=68s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.051 | train_acc=0.568 | val_loss=1.085 | val_acc=0.554 | val_bal_acc=0.551 | val_macro_f1=0.547 | val_weighted_f1=0.549 | best=0.577 | lr=4.2e-04 | time=83s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=1.035 | train_acc=0.571 | val_loss=1.160 | val_acc=0.558 | val_bal_acc=0.556 | val_macro_f1=0.553 | val_weighted_f1=0.555 | best=0.577 | lr=4.2e-04 | time=72s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=1.028 | train_acc=0.584 | val_loss=1.117 | val_acc=0.564 | val_bal_acc=0.561 | val_macro_f1=0.549 | val_weighted_f1=0.550 | best=0.577 | lr=4.2e-04 | time=67s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=4 best_val_bal_acc=0.577 ==========
+[I 2026-05-22 13:38:53,036] Trial 4 finished with value: 0.577095233105166 and parameters: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.13203677503379666, 'task.mlp_probing.optimizer.lr': 0.00041855489214290037, 'task.mlp_probing.optimizer.weight_decay': 0.0011028851024298613}. Best is trial 4 with value: 0.577095233105166.
+Trial 5 starting with params: {'task.classifier.mlp_hidden_dim': 256, 'task.classifier.dropout': 0.12104216482722994, 'task.mlp_probing.optimizer.lr': 0.00021666833161149317, 'task.mlp_probing.optimizer.weight_decay': 0.0002507511510874748}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=5 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   1%|▏         | 2/140 [00:00<00:22,  6.10it/s]
+Loading weights:   2%|▏         | 3/140 [00:00<00:33,  4.05it/s]
+Loading weights:   3%|▎         | 4/140 [00:00<00:28,  4.69it/s]
+Loading weights:   6%|▋         | 9/140 [00:01<00:25,  5.06it/s]
+Loading weights:   7%|▋         | 10/140 [00:02<00:39,  3.25it/s]
+Loading weights:   8%|▊         | 11/140 [00:04<01:11,  1.80it/s]
+Loading weights:   9%|▊         | 12/140 [00:04<01:15,  1.69it/s]
+Loading weights:   9%|▉         | 13/140 [00:05<01:00,  2.09it/s]
+Loading weights:  10%|█         | 14/140 [00:06<01:15,  1.66it/s]
+Loading weights:  11%|█         | 15/140 [00:07<01:31,  1.37it/s]
+Loading weights:  11%|█▏        | 16/140 [00:07<01:09,  1.79it/s]
+Loading weights:  16%|█▋        | 23/140 [00:08<00:29,  4.00it/s]
+Loading weights:  27%|██▋       | 38/140 [00:08<00:10, 10.10it/s]
+Loading weights:  29%|██▉       | 41/140 [00:09<00:11,  8.62it/s]
+Loading weights:  31%|███       | 43/140 [00:09<00:13,  7.43it/s]
+Loading weights:  31%|███▏      | 44/140 [00:10<00:16,  5.75it/s]
+Loading weights:  42%|████▏     | 59/140 [00:10<00:06, 12.32it/s]
+Loading weights:  44%|████▎     | 61/140 [00:11<00:09,  7.93it/s]
+Loading weights:  48%|████▊     | 67/140 [00:12<00:10,  6.97it/s]
+Loading weights:  53%|█████▎    | 74/140 [00:14<00:11,  5.67it/s]
+Loading weights:  54%|█████▎    | 75/140 [00:15<00:12,  5.06it/s]
+Loading weights:  61%|██████▏   | 86/140 [00:16<00:07,  6.80it/s]
+Loading weights:  63%|██████▎   | 88/140 [00:16<00:08,  6.05it/s]
+Loading weights:  64%|██████▍   | 90/140 [00:18<00:12,  3.92it/s]
+Loading weights:  76%|███████▌  | 106/140 [00:18<00:04,  8.37it/s]
+Loading weights:  77%|███████▋  | 108/140 [00:19<00:05,  6.18it/s]
+Loading weights:  78%|███████▊  | 109/140 [00:20<00:04,  6.31it/s]
+Loading weights:  79%|███████▊  | 110/140 [00:21<00:08,  3.68it/s]
+Loading weights:  89%|████████▉ | 125/140 [00:23<00:02,  5.97it/s]
+Loading weights: 100%|██████████| 140/140 [00:23<00:00,  6.03it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 5
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.333 | train_acc=0.421 | val_loss=1.178 | val_acc=0.484 | val_bal_acc=0.483 | val_macro_f1=0.458 | val_weighted_f1=0.460 | best=0.483 | lr=2.2e-04 | time=147s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.177 | train_acc=0.486 | val_loss=1.142 | val_acc=0.501 | val_bal_acc=0.502 | val_macro_f1=0.497 | val_weighted_f1=0.499 | best=0.502 | lr=2.2e-04 | time=104s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.148 | train_acc=0.505 | val_loss=1.178 | val_acc=0.484 | val_bal_acc=0.485 | val_macro_f1=0.471 | val_weighted_f1=0.472 | best=0.502 | lr=2.2e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.133 | train_acc=0.512 | val_loss=1.145 | val_acc=0.506 | val_bal_acc=0.509 | val_macro_f1=0.476 | val_weighted_f1=0.477 | best=0.509 | lr=2.2e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.120 | train_acc=0.518 | val_loss=1.205 | val_acc=0.497 | val_bal_acc=0.500 | val_macro_f1=0.457 | val_weighted_f1=0.458 | best=0.509 | lr=2.2e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.116 | train_acc=0.518 | val_loss=1.084 | val_acc=0.545 | val_bal_acc=0.546 | val_macro_f1=0.539 | val_weighted_f1=0.541 | best=0.546 | lr=2.2e-04 | time=144s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.108 | train_acc=0.525 | val_loss=1.119 | val_acc=0.531 | val_bal_acc=0.530 | val_macro_f1=0.523 | val_weighted_f1=0.524 | best=0.546 | lr=2.2e-04 | time=81s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.083 | train_acc=0.533 | val_loss=1.064 | val_acc=0.550 | val_bal_acc=0.551 | val_macro_f1=0.548 | val_weighted_f1=0.550 | best=0.551 | lr=2.2e-04 | time=139s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.093 | train_acc=0.539 | val_loss=1.104 | val_acc=0.549 | val_bal_acc=0.547 | val_macro_f1=0.545 | val_weighted_f1=0.547 | best=0.551 | lr=2.2e-04 | time=79s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.084 | train_acc=0.543 | val_loss=1.081 | val_acc=0.555 | val_bal_acc=0.554 | val_macro_f1=0.553 | val_weighted_f1=0.556 | best=0.554 | lr=2.2e-04 | time=149s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.075 | train_acc=0.552 | val_loss=1.067 | val_acc=0.560 | val_bal_acc=0.559 | val_macro_f1=0.549 | val_weighted_f1=0.550 | best=0.559 | lr=2.2e-04 | time=149s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.056 | train_acc=0.551 | val_loss=1.067 | val_acc=0.558 | val_bal_acc=0.556 | val_macro_f1=0.546 | val_weighted_f1=0.548 | best=0.559 | lr=2.2e-04 | time=80s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.064 | train_acc=0.559 | val_loss=1.095 | val_acc=0.539 | val_bal_acc=0.536 | val_macro_f1=0.545 | val_weighted_f1=0.547 | best=0.559 | lr=2.2e-04 | time=78s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.044 | train_acc=0.549 | val_loss=1.103 | val_acc=0.547 | val_bal_acc=0.549 | val_macro_f1=0.534 | val_weighted_f1=0.535 | best=0.559 | lr=2.2e-04 | time=70s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=1.051 | train_acc=0.549 | val_loss=1.082 | val_acc=0.555 | val_bal_acc=0.553 | val_macro_f1=0.549 | val_weighted_f1=0.550 | best=0.559 | lr=2.2e-04 | time=68s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.011 | train_acc=0.576 | val_loss=1.066 | val_acc=0.566 | val_bal_acc=0.567 | val_macro_f1=0.560 | val_weighted_f1=0.561 | best=0.567 | lr=1.1e-04 | time=93s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=1.002 | train_acc=0.578 | val_loss=1.057 | val_acc=0.573 | val_bal_acc=0.574 | val_macro_f1=0.570 | val_weighted_f1=0.571 | best=0.574 | lr=1.1e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=1.006 | train_acc=0.577 | val_loss=1.057 | val_acc=0.567 | val_bal_acc=0.567 | val_macro_f1=0.562 | val_weighted_f1=0.563 | best=0.574 | lr=1.1e-04 | time=68s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=5 best_val_bal_acc=0.574 ==========
+[I 2026-05-22 14:09:18,291] Trial 5 finished with value: 0.573600740754666 and parameters: {'task.classifier.mlp_hidden_dim': 256, 'task.classifier.dropout': 0.12104216482722994, 'task.mlp_probing.optimizer.lr': 0.00021666833161149317, 'task.mlp_probing.optimizer.weight_decay': 0.0002507511510874748}. Best is trial 4 with value: 0.577095233105166.
+Trial 6 starting with params: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.09484355010118468, 'task.mlp_probing.optimizer.lr': 0.00019393293540390287, 'task.mlp_probing.optimizer.weight_decay': 0.0014497096076358765}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=6 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   5%|▌         | 7/140 [00:00<00:16,  8.22it/s]
+Loading weights:   6%|▌         | 8/140 [00:01<00:34,  3.79it/s]
+Loading weights:  11%|█         | 15/140 [00:02<00:21,  5.79it/s]
+Loading weights:  11%|█▏        | 16/140 [00:03<00:29,  4.24it/s]
+Loading weights:  15%|█▌        | 21/140 [00:04<00:24,  4.88it/s]
+Loading weights:  16%|█▌        | 22/140 [00:04<00:26,  4.49it/s]
+Loading weights:  16%|█▋        | 23/140 [00:05<00:36,  3.23it/s]
+Loading weights:  17%|█▋        | 24/140 [00:06<00:41,  2.80it/s]
+Loading weights:  18%|█▊        | 25/140 [00:06<00:35,  3.22it/s]
+Loading weights:  22%|██▏       | 31/140 [00:07<00:23,  4.61it/s]
+Loading weights:  29%|██▊       | 40/140 [00:07<00:10,  9.94it/s]
+Loading weights:  31%|███       | 43/140 [00:08<00:14,  6.78it/s]
+Loading weights:  32%|███▏      | 45/140 [00:08<00:12,  7.55it/s]
+Loading weights:  34%|███▎      | 47/140 [00:09<00:18,  5.00it/s]
+Loading weights:  39%|███▊      | 54/140 [00:09<00:11,  7.39it/s]
+Loading weights:  41%|████▏     | 58/140 [00:11<00:17,  4.62it/s]
+Loading weights:  47%|████▋     | 66/140 [00:11<00:10,  7.18it/s]
+Loading weights:  49%|████▉     | 69/140 [00:12<00:11,  6.31it/s]
+Loading weights:  51%|█████     | 71/140 [00:12<00:11,  6.16it/s]
+Loading weights:  51%|█████▏    | 72/140 [00:13<00:17,  3.94it/s]
+Loading weights:  58%|█████▊    | 81/140 [00:15<00:12,  4.64it/s]
+Loading weights:  63%|██████▎   | 88/140 [00:16<00:10,  4.85it/s]
+Loading weights:  68%|██████▊   | 95/140 [00:17<00:07,  6.12it/s]
+Loading weights:  71%|███████   | 99/140 [00:18<00:06,  6.02it/s]
+Loading weights:  71%|███████▏  | 100/140 [00:18<00:06,  6.11it/s]
+Loading weights:  73%|███████▎  | 102/140 [00:19<00:08,  4.34it/s]
+Loading weights:  76%|███████▋  | 107/140 [00:19<00:06,  5.44it/s]
+Loading weights:  77%|███████▋  | 108/140 [00:20<00:07,  4.39it/s]
+Loading weights:  78%|███████▊  | 109/140 [00:20<00:06,  4.65it/s]
+Loading weights:  81%|████████▏ | 114/140 [00:21<00:04,  6.45it/s]
+Loading weights:  82%|████████▏ | 115/140 [00:22<00:06,  3.74it/s]
+Loading weights:  88%|████████▊ | 123/140 [00:22<00:02,  6.12it/s]
+Loading weights:  91%|█████████ | 127/140 [00:24<00:02,  4.85it/s]
+Loading weights: 100%|██████████| 140/140 [00:24<00:00,  5.78it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 6
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.310 | train_acc=0.431 | val_loss=1.190 | val_acc=0.495 | val_bal_acc=0.490 | val_macro_f1=0.484 | val_weighted_f1=0.487 | best=0.490 | lr=1.9e-04 | time=98s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.160 | train_acc=0.494 | val_loss=1.132 | val_acc=0.521 | val_bal_acc=0.523 | val_macro_f1=0.509 | val_weighted_f1=0.510 | best=0.523 | lr=1.9e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.141 | train_acc=0.499 | val_loss=1.118 | val_acc=0.514 | val_bal_acc=0.510 | val_macro_f1=0.496 | val_weighted_f1=0.498 | best=0.523 | lr=1.9e-04 | time=68s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.126 | train_acc=0.514 | val_loss=1.110 | val_acc=0.524 | val_bal_acc=0.519 | val_macro_f1=0.520 | val_weighted_f1=0.523 | best=0.523 | lr=1.9e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.115 | train_acc=0.520 | val_loss=1.143 | val_acc=0.537 | val_bal_acc=0.534 | val_macro_f1=0.525 | val_weighted_f1=0.527 | best=0.534 | lr=1.9e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.113 | train_acc=0.522 | val_loss=1.084 | val_acc=0.549 | val_bal_acc=0.548 | val_macro_f1=0.543 | val_weighted_f1=0.545 | best=0.548 | lr=1.9e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.102 | train_acc=0.533 | val_loss=1.137 | val_acc=0.533 | val_bal_acc=0.529 | val_macro_f1=0.517 | val_weighted_f1=0.520 | best=0.548 | lr=1.9e-04 | time=69s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.080 | train_acc=0.539 | val_loss=1.084 | val_acc=0.554 | val_bal_acc=0.552 | val_macro_f1=0.547 | val_weighted_f1=0.549 | best=0.552 | lr=1.9e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.082 | train_acc=0.549 | val_loss=1.111 | val_acc=0.545 | val_bal_acc=0.542 | val_macro_f1=0.542 | val_weighted_f1=0.545 | best=0.552 | lr=1.9e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.070 | train_acc=0.547 | val_loss=1.105 | val_acc=0.540 | val_bal_acc=0.541 | val_macro_f1=0.523 | val_weighted_f1=0.524 | best=0.552 | lr=1.9e-04 | time=69s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.059 | train_acc=0.559 | val_loss=1.064 | val_acc=0.553 | val_bal_acc=0.551 | val_macro_f1=0.544 | val_weighted_f1=0.546 | best=0.552 | lr=1.9e-04 | time=69s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.051 | train_acc=0.558 | val_loss=1.082 | val_acc=0.554 | val_bal_acc=0.549 | val_macro_f1=0.549 | val_weighted_f1=0.552 | best=0.552 | lr=1.9e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.010 | train_acc=0.566 | val_loss=1.067 | val_acc=0.560 | val_bal_acc=0.560 | val_macro_f1=0.562 | val_weighted_f1=0.563 | best=0.560 | lr=9.7e-05 | time=92s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.023 | train_acc=0.574 | val_loss=1.054 | val_acc=0.571 | val_bal_acc=0.571 | val_macro_f1=0.567 | val_weighted_f1=0.568 | best=0.571 | lr=9.7e-05 | time=92s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=0.992 | train_acc=0.582 | val_loss=1.055 | val_acc=0.570 | val_bal_acc=0.569 | val_macro_f1=0.563 | val_weighted_f1=0.565 | best=0.571 | lr=9.7e-05 | time=67s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.008 | train_acc=0.575 | val_loss=1.046 | val_acc=0.572 | val_bal_acc=0.573 | val_macro_f1=0.565 | val_weighted_f1=0.567 | best=0.573 | lr=9.7e-05 | time=93s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=1.004 | train_acc=0.575 | val_loss=1.085 | val_acc=0.562 | val_bal_acc=0.559 | val_macro_f1=0.554 | val_weighted_f1=0.556 | best=0.573 | lr=9.7e-05 | time=68s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=1.009 | train_acc=0.580 | val_loss=1.083 | val_acc=0.565 | val_bal_acc=0.566 | val_macro_f1=0.561 | val_weighted_f1=0.562 | best=0.573 | lr=9.7e-05 | time=67s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=6 best_val_bal_acc=0.573 ==========
+[I 2026-05-22 14:33:52,574] Trial 6 finished with value: 0.5726621189909207 and parameters: {'task.classifier.mlp_hidden_dim': 512, 'task.classifier.dropout': 0.09484355010118468, 'task.mlp_probing.optimizer.lr': 0.00019393293540390287, 'task.mlp_probing.optimizer.weight_decay': 0.0014497096076358765}. Best is trial 4 with value: 0.577095233105166.
+Trial 7 starting with params: {'task.classifier.mlp_hidden_dim': 256, 'task.classifier.dropout': 0.05258925619623703, 'task.mlp_probing.optimizer.lr': 0.0005319396973555901, 'task.mlp_probing.optimizer.weight_decay': 4.151321430019451e-06}
+========== TRIAL_START dataset=SLEEP mode=mlp seed=42 trial=7 device=cuda:0 ==========
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   1%|▏         | 2/140 [00:00<00:23,  5.95it/s]
+Loading weights:   2%|▏         | 3/140 [00:00<00:34,  4.02it/s]
+Loading weights:   3%|▎         | 4/140 [00:00<00:29,  4.66it/s]
+Loading weights:   9%|▊         | 12/140 [00:01<00:09, 12.89it/s]
+Loading weights:  10%|█         | 14/140 [00:02<00:27,  4.53it/s]
+Loading weights:  11%|█         | 15/140 [00:03<00:30,  4.16it/s]
+Loading weights:  14%|█▍        | 20/140 [00:05<00:43,  2.78it/s]
+Loading weights:  21%|██▏       | 30/140 [00:06<00:23,  4.72it/s]
+Loading weights:  27%|██▋       | 38/140 [00:07<00:15,  6.38it/s]
+Loading weights:  28%|██▊       | 39/140 [00:07<00:18,  5.60it/s]
+Loading weights:  29%|██▊       | 40/140 [00:09<00:30,  3.23it/s]
+Loading weights:  36%|███▋      | 51/140 [00:10<00:16,  5.35it/s]
+Loading weights:  41%|████      | 57/140 [00:11<00:12,  6.50it/s]
+Loading weights:  41%|████▏     | 58/140 [00:11<00:15,  5.43it/s]
+Loading weights:  46%|████▋     | 65/140 [00:13<00:17,  4.39it/s]
+Loading weights:  56%|█████▌    | 78/140 [00:15<00:12,  5.11it/s]
+Loading weights:  56%|█████▋    | 79/140 [00:16<00:12,  4.74it/s]
+Loading weights:  66%|██████▌   | 92/140 [00:16<00:06,  7.80it/s]
+Loading weights:  68%|██████▊   | 95/140 [00:17<00:05,  7.53it/s]
+Loading weights:  69%|██████▊   | 96/140 [00:18<00:08,  5.20it/s]
+Loading weights:  74%|███████▍  | 104/140 [00:18<00:05,  6.99it/s]
+Loading weights:  75%|███████▌  | 105/140 [00:19<00:05,  6.01it/s]
+Loading weights:  80%|████████  | 112/140 [00:20<00:03,  7.14it/s]
+Loading weights:  81%|████████  | 113/140 [00:20<00:04,  6.36it/s]
+Loading weights:  83%|████████▎ | 116/140 [00:20<00:04,  5.96it/s]
+Loading weights:  84%|████████▎ | 117/140 [00:21<00:03,  6.16it/s]
+Loading weights:  84%|████████▍ | 118/140 [00:21<00:04,  5.28it/s]
+Loading weights:  88%|████████▊ | 123/140 [00:22<00:02,  6.45it/s]
+Loading weights:  89%|████████▊ | 124/140 [00:22<00:03,  4.79it/s]
+Loading weights:  89%|████████▉ | 125/140 [00:23<00:03,  4.01it/s]
+Loading weights: 100%|██████████| 140/140 [00:23<00:00,  6.05it/s]
+Detected input shape: Chans=6, Timepoints=6000
+Loading cls_query_token from pretrained REVE weights
+>>> Setup MLP Probing (MLP) for trial 7
+Starting training stage: mlp for 18 epochs. Device: cuda:0
+[SLEEP][mlp][seed42] epoch 001/018 | train_loss=1.289 | train_acc=0.434 | val_loss=1.211 | val_acc=0.466 | val_bal_acc=0.469 | val_macro_f1=0.458 | val_weighted_f1=0.459 | best=0.469 | lr=5.3e-04 | time=91s
+[SLEEP][mlp][seed42] epoch 002/018 | train_loss=1.191 | train_acc=0.489 | val_loss=1.141 | val_acc=0.506 | val_bal_acc=0.508 | val_macro_f1=0.493 | val_weighted_f1=0.494 | best=0.508 | lr=5.3e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 003/018 | train_loss=1.155 | train_acc=0.498 | val_loss=1.108 | val_acc=0.514 | val_bal_acc=0.508 | val_macro_f1=0.498 | val_weighted_f1=0.502 | best=0.508 | lr=5.3e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 004/018 | train_loss=1.137 | train_acc=0.517 | val_loss=1.181 | val_acc=0.508 | val_bal_acc=0.510 | val_macro_f1=0.491 | val_weighted_f1=0.492 | best=0.510 | lr=5.3e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 005/018 | train_loss=1.112 | train_acc=0.533 | val_loss=1.113 | val_acc=0.530 | val_bal_acc=0.528 | val_macro_f1=0.521 | val_weighted_f1=0.522 | best=0.528 | lr=5.3e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 006/018 | train_loss=1.105 | train_acc=0.541 | val_loss=1.090 | val_acc=0.530 | val_bal_acc=0.528 | val_macro_f1=0.513 | val_weighted_f1=0.514 | best=0.528 | lr=5.3e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 007/018 | train_loss=1.083 | train_acc=0.540 | val_loss=1.112 | val_acc=0.522 | val_bal_acc=0.525 | val_macro_f1=0.509 | val_weighted_f1=0.510 | best=0.528 | lr=5.3e-04 | time=67s
+[SLEEP][mlp][seed42] epoch 008/018 | train_loss=1.076 | train_acc=0.550 | val_loss=1.091 | val_acc=0.552 | val_bal_acc=0.548 | val_macro_f1=0.533 | val_weighted_f1=0.535 | best=0.548 | lr=5.3e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 009/018 | train_loss=1.056 | train_acc=0.570 | val_loss=1.126 | val_acc=0.549 | val_bal_acc=0.549 | val_macro_f1=0.536 | val_weighted_f1=0.537 | best=0.549 | lr=5.3e-04 | time=92s
+[SLEEP][mlp][seed42] epoch 010/018 | train_loss=1.047 | train_acc=0.559 | val_loss=1.096 | val_acc=0.552 | val_bal_acc=0.549 | val_macro_f1=0.549 | val_weighted_f1=0.551 | best=0.549 | lr=5.3e-04 | time=94s
+[SLEEP][mlp][seed42] epoch 011/018 | train_loss=1.030 | train_acc=0.579 | val_loss=1.138 | val_acc=0.555 | val_bal_acc=0.552 | val_macro_f1=0.543 | val_weighted_f1=0.545 | best=0.552 | lr=5.3e-04 | time=94s
+[SLEEP][mlp][seed42] epoch 012/018 | train_loss=1.025 | train_acc=0.574 | val_loss=1.155 | val_acc=0.545 | val_bal_acc=0.543 | val_macro_f1=0.533 | val_weighted_f1=0.534 | best=0.552 | lr=5.3e-04 | time=68s
+[SLEEP][mlp][seed42] epoch 013/018 | train_loss=1.019 | train_acc=0.566 | val_loss=1.069 | val_acc=0.561 | val_bal_acc=0.559 | val_macro_f1=0.545 | val_weighted_f1=0.546 | best=0.559 | lr=5.3e-04 | time=100s
+[SLEEP][mlp][seed42] epoch 014/018 | train_loss=1.017 | train_acc=0.584 | val_loss=1.073 | val_acc=0.566 | val_bal_acc=0.566 | val_macro_f1=0.554 | val_weighted_f1=0.555 | best=0.566 | lr=5.3e-04 | time=103s
+[SLEEP][mlp][seed42] epoch 015/018 | train_loss=0.998 | train_acc=0.597 | val_loss=1.251 | val_acc=0.551 | val_bal_acc=0.549 | val_macro_f1=0.526 | val_weighted_f1=0.528 | best=0.566 | lr=5.3e-04 | time=73s
+[SLEEP][mlp][seed42] epoch 016/018 | train_loss=1.009 | train_acc=0.586 | val_loss=1.163 | val_acc=0.552 | val_bal_acc=0.553 | val_macro_f1=0.539 | val_weighted_f1=0.540 | best=0.566 | lr=5.3e-04 | time=71s
+[SLEEP][mlp][seed42] epoch 017/018 | train_loss=0.990 | train_acc=0.597 | val_loss=1.087 | val_acc=0.569 | val_bal_acc=0.571 | val_macro_f1=0.561 | val_weighted_f1=0.562 | best=0.571 | lr=5.3e-04 | time=135s
+[SLEEP][mlp][seed42] epoch 018/018 | train_loss=0.975 | train_acc=0.600 | val_loss=1.130 | val_acc=0.565 | val_bal_acc=0.565 | val_macro_f1=0.562 | val_weighted_f1=0.563 | best=0.571 | lr=5.3e-04 | time=105s
+========== TRIAL_DONE dataset=SLEEP mode=mlp seed=42 trial=7 best_val_bal_acc=0.571 ==========
+[I 2026-05-22 15:02:47,449] Trial 7 finished with value: 0.5714342439310905 and parameters: {'task.classifier.mlp_hidden_dim': 256, 'task.classifier.dropout': 0.05258925619623703, 'task.mlp_probing.optimizer.lr': 0.0005319396973555901, 'task.mlp_probing.optimizer.weight_decay': 4.151321430019451e-06}. Best is trial 4 with value: 0.577095233105166.
+=== Best trial ===
+  Number: 4
+  Value: 0.577095233105166
+  Params:
+    task.classifier.mlp_hidden_dim: 512
+    task.classifier.dropout: 0.13203677503379666
+    task.mlp_probing.optimizer.lr: 0.00041855489214290037
+    task.mlp_probing.optimizer.weight_decay: 0.0011028851024298613

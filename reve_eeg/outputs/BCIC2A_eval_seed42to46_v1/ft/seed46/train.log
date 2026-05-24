@@ -1,0 +1,56 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/src/dt.py:66: IdrTorchWarning: Calling idr_torch only makes sense within a distributed execution but none was detected. You may have forgotten to use a launcher (such as srun). Back to default (non distributed) values
+  if idr_torch.is_master or kwargs.pop("force", False):
+Loaded external task config: /mnt/dataset3/nzh/eeg_FM/reve_eeg/src/configs/our_tasks/course_bcic2a.yaml
+Running with task: BCIC2A
+Output directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_eval_seed42to46_v1/BCIC2A/ft/seed46
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   6%|▌         | 8/140 [00:02<00:47,  2.79it/s]
+Loading weights:  14%|█▎        | 19/140 [00:06<00:39,  3.08it/s]
+Loading weights:  19%|█▊        | 26/140 [00:09<00:40,  2.84it/s]
+Loading weights:  19%|█▉        | 27/140 [00:16<01:40,  1.12it/s]
+Loading weights:  34%|███▎      | 47/140 [00:17<00:30,  3.07it/s]
+Loading weights:  40%|████      | 56/140 [00:21<00:29,  2.85it/s]
+Loading weights:  47%|████▋     | 66/140 [00:23<00:22,  3.24it/s]
+Loading weights:  49%|████▉     | 69/140 [00:24<00:22,  3.18it/s]
+Loading weights:  50%|█████     | 70/140 [00:27<00:29,  2.37it/s]
+Loading weights:  51%|█████     | 71/140 [00:29<00:37,  1.84it/s]
+Loading weights:  63%|██████▎   | 88/140 [00:30<00:13,  3.99it/s]
+Loading weights:  66%|██████▌   | 92/140 [00:33<00:15,  3.04it/s]
+Loading weights:  70%|███████   | 98/140 [00:34<00:12,  3.40it/s]
+Loading weights:  71%|███████   | 99/140 [00:36<00:16,  2.42it/s]
+Loading weights:  76%|███████▋  | 107/140 [00:39<00:11,  2.81it/s]
+Loading weights:  77%|███████▋  | 108/140 [00:39<00:12,  2.58it/s]
+Loading weights:  83%|████████▎ | 116/140 [00:40<00:06,  3.77it/s]
+Loading weights:  85%|████████▌ | 119/140 [00:41<00:05,  3.63it/s]
+Loading weights:  89%|████████▉ | 125/140 [00:45<00:05,  2.68it/s]
+Loading weights: 100%|██████████| 140/140 [00:45<00:00,  3.11it/s]
+Detected input shape: Chans=22, Timepoints=800
+Loading cls_query_token from pretrained REVE weights
+Train: 720 | Valid: 360
+Total: 1,080
+>>> Setup Fine-Tuning (FT)
+Batch size for stage ft: 32
+Train: 720 | Valid: 360
+Total: 1,080
+Starting training stage: ft for 30 epochs. Device: cuda:0
+[BCIC2A][ft][seed46] epoch 001/030 | train_loss=1.493 | train_acc=0.232 | val_loss=1.373 | val_acc=0.322 | val_bal_acc=0.322 | val_macro_f1=0.271 | val_weighted_f1=0.271 | best=0.322 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=74s
+[BCIC2A][ft][seed46] epoch 002/030 | train_loss=1.416 | train_acc=0.283 | val_loss=1.350 | val_acc=0.342 | val_bal_acc=0.342 | val_macro_f1=0.320 | val_weighted_f1=0.320 | best=0.342 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=55s
+[BCIC2A][ft][seed46] epoch 003/030 | train_loss=1.336 | train_acc=0.346 | val_loss=1.359 | val_acc=0.303 | val_bal_acc=0.303 | val_macro_f1=0.281 | val_weighted_f1=0.281 | best=0.342 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=15s
+[BCIC2A][ft][seed46] epoch 004/030 | train_loss=1.212 | train_acc=0.471 | val_loss=1.396 | val_acc=0.336 | val_bal_acc=0.336 | val_macro_f1=0.293 | val_weighted_f1=0.293 | best=0.342 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=37s
+[BCIC2A][ft][seed46] epoch 005/030 | train_loss=1.024 | train_acc=0.551 | val_loss=1.510 | val_acc=0.347 | val_bal_acc=0.347 | val_macro_f1=0.345 | val_weighted_f1=0.345 | best=0.347 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=55s
+[BCIC2A][ft][seed46] epoch 006/030 | train_loss=0.820 | train_acc=0.694 | val_loss=1.628 | val_acc=0.361 | val_bal_acc=0.361 | val_macro_f1=0.361 | val_weighted_f1=0.361 | best=0.361 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=54s
+[BCIC2A][ft][seed46] epoch 007/030 | train_loss=0.613 | train_acc=0.781 | val_loss=1.831 | val_acc=0.308 | val_bal_acc=0.308 | val_macro_f1=0.296 | val_weighted_f1=0.296 | best=0.361 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=14s
+[BCIC2A][ft][seed46] epoch 008/030 | train_loss=0.448 | train_acc=0.842 | val_loss=2.071 | val_acc=0.342 | val_bal_acc=0.342 | val_macro_f1=0.332 | val_weighted_f1=0.332 | best=0.361 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=32s
+[BCIC2A][ft][seed46] epoch 009/030 | train_loss=0.305 | train_acc=0.914 | val_loss=2.287 | val_acc=0.339 | val_bal_acc=0.339 | val_macro_f1=0.323 | val_weighted_f1=0.323 | best=0.361 | lr_head=2.6e-04 | lr_encoder=1.7e-05 | time=9s
+[BCIC2A][ft][seed46] epoch 010/030 | train_loss=0.175 | train_acc=0.956 | val_loss=2.518 | val_acc=0.325 | val_bal_acc=0.325 | val_macro_f1=0.321 | val_weighted_f1=0.321 | best=0.361 | lr_head=1.3e-04 | lr_encoder=8.5e-06 | time=9s
+[BCIC2A][ft][seed46] epoch 011/030 | train_loss=0.108 | train_acc=0.979 | val_loss=2.736 | val_acc=0.333 | val_bal_acc=0.333 | val_macro_f1=0.328 | val_weighted_f1=0.328 | best=0.361 | lr_head=1.3e-04 | lr_encoder=8.5e-06 | time=9s
+[BCIC2A][ft][seed46] epoch 012/030 | train_loss=0.087 | train_acc=0.976 | val_loss=2.969 | val_acc=0.333 | val_bal_acc=0.333 | val_macro_f1=0.333 | val_weighted_f1=0.333 | best=0.361 | lr_head=1.3e-04 | lr_encoder=8.5e-06 | time=15s
+[BCIC2A][ft][seed46] epoch 013/030 | train_loss=0.056 | train_acc=0.989 | val_loss=3.088 | val_acc=0.303 | val_bal_acc=0.303 | val_macro_f1=0.300 | val_weighted_f1=0.300 | best=0.361 | lr_head=6.5e-05 | lr_encoder=4.3e-06 | time=15s
+[BCIC2A][ft][seed46] epoch 014/030 | train_loss=0.035 | train_acc=0.996 | val_loss=3.262 | val_acc=0.300 | val_bal_acc=0.300 | val_macro_f1=0.297 | val_weighted_f1=0.297 | best=0.361 | lr_head=6.5e-05 | lr_encoder=4.3e-06 | time=15s
+[BCIC2A][ft][seed46] epoch 015/030 | train_loss=0.030 | train_acc=0.992 | val_loss=3.392 | val_acc=0.306 | val_bal_acc=0.306 | val_macro_f1=0.306 | val_weighted_f1=0.306 | best=0.361 | lr_head=6.5e-05 | lr_encoder=4.3e-06 | time=15s
+Stage ft finished due to patience limit.
+Model saved to /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_eval_seed42to46_v1/BCIC2A/ft/seed46

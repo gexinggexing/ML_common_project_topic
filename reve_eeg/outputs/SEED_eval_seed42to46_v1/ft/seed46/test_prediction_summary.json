@@ -1,0 +1,18 @@
+{
+  "dataset": "SEED",
+  "mode": "ft",
+  "seed": 46,
+  "run_dir": "outputs/course_project_eval_seed42to46_v1/SEED/ft/seed46",
+  "checkpoint": "outputs/course_project_eval_seed42to46_v1/SEED/ft/seed46/model_best.pth",
+  "prediction_csv": "outputs/course_project_eval_seed42to46_v1/SEED/ft/seed46/test_predictions.csv",
+  "logits_npy": "outputs/course_project_eval_seed42to46_v1/SEED/ft/seed46/test_logits.npy",
+  "logits_shape": [
+    450,
+    3
+  ],
+  "x_key": "X",
+  "channels_not_found": [],
+  "fallback_channels": [],
+  "normalization_stats_path": "data/course_project/stats/SEED_train_stats.json",
+  "non_finite_values_handled": 0
+}
