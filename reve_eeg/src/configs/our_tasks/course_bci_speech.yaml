@@ -16,7 +16,7 @@ data_loader:
     dataset_name: BCI_Speech
     ckpt_root: ${ckpt_root}
     normalize: true
-    cache_in_memory: false
+    cache_in_memory: true
     resample_to_200hz: false
   batch_size: ${oc.select:batch_size,8}
   seed: ${oc.select:seed,42}

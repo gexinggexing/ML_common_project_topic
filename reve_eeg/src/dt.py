@@ -435,6 +435,12 @@ def train_stage(  # noqa: C901, PLR0912, PLR0913, PLR0915
     print(f"Starting training stage: {stage_name} for {n_epochs} epochs. Device: {device}")
 
     for epoch in range(n_epochs):
+        if compact_console and idr_torch.is_master:
+            print(
+                f"[{config.task.name}][{stage_name}][seed{config.seed}] "
+                f"epoch {epoch + 1:03d}/{n_epochs:03d} starting | train_steps={len(train_loader)}",
+                flush=True,
+            )
         epoch_start = time.time()
         warmup = epoch < warmup_epochs
         train_metrics = train_one_epoch(
