@@ -1,0 +1,44 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/src/dt.py:66: IdrTorchWarning: Calling idr_torch only makes sense within a distributed execution but none was detected. You may have forgotten to use a launcher (such as srun). Back to default (non distributed) values
+  if idr_torch.is_master or kwargs.pop("force", False):
+Loaded external task config: /mnt/dataset3/nzh/eeg_FM/reve_eeg/src/configs/our_tasks/course_bcic2a.yaml
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   9%|▉         | 13/140 [00:01<00:14,  8.77it/s]
+Loading weights:  10%|█         | 14/140 [00:03<00:36,  3.47it/s]
+Loading weights:  14%|█▍        | 20/140 [00:05<00:34,  3.46it/s]
+Loading weights:  16%|█▌        | 22/140 [00:05<00:32,  3.60it/s]
+Loading weights:  20%|██        | 28/140 [00:06<00:28,  3.91it/s]
+Loading weights:  21%|██        | 29/140 [00:09<00:50,  2.21it/s]
+Loading weights:  27%|██▋       | 38/140 [00:10<00:31,  3.29it/s]
+Loading weights:  28%|██▊       | 39/140 [00:12<00:42,  2.36it/s]
+Loading weights:  29%|██▊       | 40/140 [00:14<00:55,  1.82it/s]
+Loading weights:  31%|███▏      | 44/140 [00:15<00:39,  2.41it/s]
+Loading weights:  36%|███▋      | 51/140 [00:16<00:24,  3.60it/s]
+Loading weights:  46%|████▌     | 64/140 [00:17<00:14,  5.32it/s]
+Loading weights:  46%|████▋     | 65/140 [00:19<00:20,  3.71it/s]
+Loading weights:  55%|█████▌    | 77/140 [00:21<00:14,  4.43it/s]
+Loading weights:  61%|██████    | 85/140 [00:22<00:09,  5.51it/s]
+Loading weights:  62%|██████▏   | 87/140 [00:23<00:13,  4.07it/s]
+Loading weights:  68%|██████▊   | 95/140 [00:26<00:13,  3.40it/s]
+Loading weights:  75%|███████▌  | 105/140 [00:27<00:07,  4.87it/s]
+Loading weights:  80%|████████  | 112/140 [00:28<00:05,  5.18it/s]
+Loading weights:  81%|████████  | 113/140 [00:29<00:06,  4.30it/s]
+Loading weights:  83%|████████▎ | 116/140 [00:30<00:06,  3.83it/s]
+Loading weights:  86%|████████▋ | 121/140 [00:33<00:07,  2.63it/s]
+Loading weights:  87%|████████▋ | 122/140 [00:34<00:07,  2.36it/s]
+Loading weights: 100%|██████████| 140/140 [00:34<00:00,  4.04it/s]
+Detected input shape: Chans=22, Timepoints=800
+Loading cls_query_token from pretrained REVE weights
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/scripts/our_tasks/predict_test.py:309: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict = torch.load(checkpoint_path, map_location="cpu")
+Loaded test dataset for BCIC2A: 360 samples from /mnt/dataset3/panxy/course/project1_data/course project/course project/BCIC2A/test_x_only.h5 with batch_size=64
+Normalization stats: /mnt/dataset3/nzh/eeg_FM/reve_eeg/data/course_project/stats/BCIC2A_train_stats.json
+Channels not found: []
+Fallback channels: []
+Loaded checkpoint: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_eval_seed42to46_v1/BCIC2A/ft/seed43/model_best.pth
+Saved predictions to: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_eval_seed42to46_v1/BCIC2A/ft/seed43/test_predictions.csv
+Saved logits to: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_eval_seed42to46_v1/BCIC2A/ft/seed43/test_logits.npy
+Logits shape: (360, 4)

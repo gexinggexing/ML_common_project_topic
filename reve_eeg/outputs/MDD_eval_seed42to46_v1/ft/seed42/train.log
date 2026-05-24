@@ -1,0 +1,71 @@
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+/mnt/dataset3/nzh/eeg_FM/reve_eeg/src/dt.py:66: IdrTorchWarning: Calling idr_torch only makes sense within a distributed execution but none was detected. You may have forgotten to use a launcher (such as srun). Back to default (non distributed) values
+  if idr_torch.is_master or kwargs.pop("force", False):
+Loaded external task config: /mnt/dataset3/nzh/eeg_FM/reve_eeg/src/configs/our_tasks/course_mdd.yaml
+Running with task: MDD
+Output directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_eval_seed42to46_v1/MDD/ft/seed42
+Loading encoder from local HF directory: /mnt/dataset3/nzh/eeg_FM/reve_eeg/checkpoints/reve-base
+flash_attn not found, install it with `pip install flash_attn` if you want to use it
+
+Loading weights:   0%|          | 0/140 [00:00<?, ?it/s]
+Loading weights:   8%|▊         | 11/140 [00:01<00:21,  5.91it/s]
+Loading weights:  14%|█▎        | 19/140 [00:02<00:12,  9.33it/s]
+Loading weights:  15%|█▌        | 21/140 [00:04<00:29,  4.08it/s]
+Loading weights:  21%|██▏       | 30/140 [00:05<00:20,  5.41it/s]
+Loading weights:  24%|██▍       | 34/140 [00:06<00:21,  4.82it/s]
+Loading weights:  29%|██▉       | 41/140 [00:07<00:18,  5.27it/s]
+Loading weights:  32%|███▏      | 45/140 [00:08<00:16,  5.73it/s]
+Loading weights:  34%|███▍      | 48/140 [00:08<00:17,  5.29it/s]
+Loading weights:  39%|███▊      | 54/140 [00:09<00:15,  5.52it/s]
+Loading weights:  39%|███▉      | 55/140 [00:09<00:14,  5.68it/s]
+Loading weights:  44%|████▍     | 62/140 [00:10<00:12,  6.19it/s]
+Loading weights:  45%|████▌     | 63/140 [00:11<00:13,  5.56it/s]
+Loading weights:  46%|████▋     | 65/140 [00:11<00:15,  4.89it/s]
+Loading weights:  47%|████▋     | 66/140 [00:12<00:17,  4.17it/s]
+Loading weights:  52%|█████▏    | 73/140 [00:13<00:11,  6.01it/s]
+Loading weights:  54%|█████▍    | 76/140 [00:14<00:13,  4.80it/s]
+Loading weights:  55%|█████▌    | 77/140 [00:14<00:12,  5.03it/s]
+Loading weights:  56%|█████▌    | 78/140 [00:14<00:13,  4.49it/s]
+Loading weights:  56%|█████▋    | 79/140 [00:15<00:17,  3.50it/s]
+Loading weights:  61%|██████▏   | 86/140 [00:16<00:11,  4.80it/s]
+Loading weights:  68%|██████▊   | 95/140 [00:16<00:04,  9.53it/s]
+Loading weights:  70%|███████   | 98/140 [00:18<00:07,  5.41it/s]
+Loading weights:  71%|███████▏  | 100/140 [00:18<00:08,  4.88it/s]
+Loading weights:  74%|███████▍  | 104/140 [00:19<00:08,  4.38it/s]
+Loading weights:  79%|███████▊  | 110/140 [00:20<00:05,  5.89it/s]
+Loading weights:  80%|████████  | 112/140 [00:20<00:05,  5.20it/s]
+Loading weights:  83%|████████▎ | 116/140 [00:22<00:06,  3.73it/s]
+Loading weights:  94%|█████████▍| 132/140 [00:23<00:00,  8.63it/s]
+Loading weights: 100%|██████████| 140/140 [00:23<00:00,  6.05it/s]
+Detected input shape: Chans=20, Timepoints=200
+Loading cls_query_token from pretrained REVE weights
+Train: 960 | Valid: 640
+Total: 1,600
+>>> Setup Fine-Tuning (FT)
+Batch size for stage ft: 64
+Train: 960 | Valid: 640
+Total: 1,600
+Starting training stage: ft for 30 epochs. Device: cuda:0
+[MDD][ft][seed42] epoch 001/030 | train_loss=0.685 | train_acc=0.621 | val_loss=0.513 | val_acc=0.800 | val_bal_acc=0.800 | val_macro_f1=0.798 | val_weighted_f1=0.798 | best=0.800 | lr_head=1.0e-04 | lr_encoder=1.0e-05 | time=44s
+[MDD][ft][seed42] epoch 002/030 | train_loss=0.473 | train_acc=0.799 | val_loss=0.353 | val_acc=0.839 | val_bal_acc=0.839 | val_macro_f1=0.839 | val_weighted_f1=0.839 | best=0.839 | lr_head=1.0e-04 | lr_encoder=1.0e-05 | time=36s
+[MDD][ft][seed42] epoch 003/030 | train_loss=0.311 | train_acc=0.869 | val_loss=0.275 | val_acc=0.894 | val_bal_acc=0.894 | val_macro_f1=0.894 | val_weighted_f1=0.894 | best=0.894 | lr_head=1.0e-04 | lr_encoder=1.0e-05 | time=59s
+[MDD][ft][seed42] epoch 004/030 | train_loss=0.208 | train_acc=0.924 | val_loss=0.296 | val_acc=0.877 | val_bal_acc=0.877 | val_macro_f1=0.877 | val_weighted_f1=0.877 | best=0.894 | lr_head=1.0e-04 | lr_encoder=1.0e-05 | time=19s
+[MDD][ft][seed42] epoch 005/030 | train_loss=0.144 | train_acc=0.953 | val_loss=0.307 | val_acc=0.884 | val_bal_acc=0.884 | val_macro_f1=0.884 | val_weighted_f1=0.884 | best=0.894 | lr_head=1.0e-04 | lr_encoder=1.0e-05 | time=20s
+[MDD][ft][seed42] epoch 006/030 | train_loss=0.094 | train_acc=0.974 | val_loss=0.288 | val_acc=0.886 | val_bal_acc=0.886 | val_macro_f1=0.886 | val_weighted_f1=0.886 | best=0.894 | lr_head=1.0e-04 | lr_encoder=1.0e-05 | time=19s
+[MDD][ft][seed42] epoch 007/030 | train_loss=0.069 | train_acc=0.982 | val_loss=0.327 | val_acc=0.897 | val_bal_acc=0.897 | val_macro_f1=0.897 | val_weighted_f1=0.897 | best=0.897 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=49s
+[MDD][ft][seed42] epoch 008/030 | train_loss=0.052 | train_acc=0.986 | val_loss=0.339 | val_acc=0.883 | val_bal_acc=0.883 | val_macro_f1=0.883 | val_weighted_f1=0.883 | best=0.897 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=13s
+[MDD][ft][seed42] epoch 009/030 | train_loss=0.034 | train_acc=0.993 | val_loss=0.342 | val_acc=0.900 | val_bal_acc=0.900 | val_macro_f1=0.900 | val_weighted_f1=0.900 | best=0.900 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=70s
+[MDD][ft][seed42] epoch 010/030 | train_loss=0.043 | train_acc=0.989 | val_loss=0.377 | val_acc=0.897 | val_bal_acc=0.897 | val_macro_f1=0.897 | val_weighted_f1=0.897 | best=0.900 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=48s
+[MDD][ft][seed42] epoch 011/030 | train_loss=0.023 | train_acc=0.994 | val_loss=0.462 | val_acc=0.887 | val_bal_acc=0.887 | val_macro_f1=0.887 | val_weighted_f1=0.887 | best=0.900 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=29s
+[MDD][ft][seed42] epoch 012/030 | train_loss=0.012 | train_acc=0.997 | val_loss=0.400 | val_acc=0.902 | val_bal_acc=0.902 | val_macro_f1=0.901 | val_weighted_f1=0.901 | best=0.902 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=46s
+[MDD][ft][seed42] epoch 013/030 | train_loss=0.009 | train_acc=0.997 | val_loss=0.504 | val_acc=0.891 | val_bal_acc=0.891 | val_macro_f1=0.891 | val_weighted_f1=0.891 | best=0.902 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=38s
+[MDD][ft][seed42] epoch 014/030 | train_loss=0.007 | train_acc=0.997 | val_loss=0.528 | val_acc=0.892 | val_bal_acc=0.892 | val_macro_f1=0.892 | val_weighted_f1=0.892 | best=0.902 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=38s
+[MDD][ft][seed42] epoch 015/030 | train_loss=0.008 | train_acc=0.997 | val_loss=0.557 | val_acc=0.889 | val_bal_acc=0.889 | val_macro_f1=0.889 | val_weighted_f1=0.889 | best=0.902 | lr_head=5.0e-05 | lr_encoder=5.0e-06 | time=52s
+[MDD][ft][seed42] epoch 016/030 | train_loss=0.007 | train_acc=0.997 | val_loss=0.556 | val_acc=0.891 | val_bal_acc=0.891 | val_macro_f1=0.891 | val_weighted_f1=0.891 | best=0.902 | lr_head=2.5e-05 | lr_encoder=2.5e-06 | time=30s
+[MDD][ft][seed42] epoch 017/030 | train_loss=0.008 | train_acc=0.999 | val_loss=0.550 | val_acc=0.892 | val_bal_acc=0.892 | val_macro_f1=0.892 | val_weighted_f1=0.892 | best=0.902 | lr_head=2.5e-05 | lr_encoder=2.5e-06 | time=19s
+[MDD][ft][seed42] epoch 018/030 | train_loss=0.003 | train_acc=0.999 | val_loss=0.566 | val_acc=0.891 | val_bal_acc=0.891 | val_macro_f1=0.891 | val_weighted_f1=0.891 | best=0.902 | lr_head=2.5e-05 | lr_encoder=2.5e-06 | time=49s
+[MDD][ft][seed42] epoch 019/030 | train_loss=0.010 | train_acc=0.997 | val_loss=0.571 | val_acc=0.892 | val_bal_acc=0.892 | val_macro_f1=0.892 | val_weighted_f1=0.892 | best=0.902 | lr_head=1.3e-05 | lr_encoder=1.3e-06 | time=12s
+[MDD][ft][seed42] epoch 020/030 | train_loss=0.002 | train_acc=0.999 | val_loss=0.576 | val_acc=0.891 | val_bal_acc=0.891 | val_macro_f1=0.891 | val_weighted_f1=0.891 | best=0.902 | lr_head=1.3e-05 | lr_encoder=1.3e-06 | time=40s
+[MDD][ft][seed42] epoch 021/030 | train_loss=0.002 | train_acc=1.000 | val_loss=0.580 | val_acc=0.892 | val_bal_acc=0.892 | val_macro_f1=0.892 | val_weighted_f1=0.892 | best=0.902 | lr_head=1.3e-05 | lr_encoder=1.3e-06 | time=20s
+Stage ft finished due to patience limit.
+Model saved to /mnt/dataset3/nzh/eeg_FM/reve_eeg/outputs/course_project_eval_seed42to46_v1/MDD/ft/seed42
